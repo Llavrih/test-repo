@@ -1,0 +1,2486 @@
+Univerza v Ljubljani
+Fakulteta za gradbeništvo
+in geodezijo
+TSHEWANG DORJI
+THEORETICAL APPLICATION OF FRAMEWORK FOR DIGITAL
+TWIN FOR OPERATION AND MAINTENANCE PHASE
+MASTER THESIS
+SECOND CYCLE MASTER STUDY PROGRAMME BUILDING
+INFORMATION MODELLING – BIM A+
+Ljubljana, 2022
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase II
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+ERRATA
+Page Line Error Correction
+III Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+»This page is intentionally blank«
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase IV
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+BIBLIOGRAFSKO – DOKUMENTACIJSKA STRAN IN IZVLEČEK
+UDK: 004.946.5:69-5(043.3)
+Avtor: Tshewang Dorji
+Mentor: doc. dr. Tomo Cerovšek
+Somentor: Ekaterina Moskvina
+Naslov: Teoretična aplikacija ogrodja za digitalni dvojček za fazo obratovanja in
+vzdrževanja
+Tip dokumenta: Magistrsko delo
+Obseg in oprema: 100 str., 61 sl., 12 preg., 3 pril.
+Ključne besede: digitalni dvojček, okvir za implementacijo, faza obratovanja in vzdrževanja
+Izvleček:
+Stopnje sprejemanja konceptov in tehnologij digitalnega dvojčka (angl. DT - Digital Twin) v arhitekturi,
+iženirstvu in gradbeništvu (AEC) so se znatno povečale v celotnem življenjskem ciklu projekta od
+dobave do faze delovanja in vzdrževanja (angl. O&M - Operation and Maintance). To je posledica
+potencialnih in dokazanih koristi DT za izboljšanje učinkovitosti in produktivnosti upravljanja sredstev,
+zlasti med fazo O&M.
+Empirični dokazi kažejo, da koncepti in tehnologije DT omogočajo pametno upravljanje fizičnih
+sredstev, če se izvede integracijo vseh ključnih podatkov O&M, ki prikazujejo statuss sredstev v
+realnem času. Vendar pa zaradi pomanjkanja smernic in standardnih postopkov za DT ni moč v celoti
+izkoristiti potenciala tehnologij DT za upravljanje in vzdrževanje O&M. Ob upoštevanju te ovire to
+raziskovalno delo presoja in analizira najsodobnejše tehnologije DT v okviru podrobnega prelgeda
+literature v kombinaciji s študijami primerov in demonstracijami okvirnih aplikacij z uporabo
+programske opreme/platform DT (Dalux FM).
+Cilj te raziskovalne študije je oblikovati in predlagati optimalno raven okvira DT, ki se se lahko
+uporablja v fazi obratovanja in vzdrževanja O&M. Predstavljeni okvir DT vzpostavlja tudi jasen
+postopek izvajanja teoretičnega DT med fazo delovanja in vzdrževanja, ki lahko vodi do inovativnega
+upravljanja osnovnih fizičnih sredstev.
+V Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+»This page is intentionally blank«
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase VI
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+BIBLIOGRAPHIC– DOKUMENTALISTIC INFORMATION AND ABSTRACT
+UDC: 004.946.5:69-5(043.3)
+Author: Tshewang Dorji
+Supervisor: Assist. Prof. Tomo Cerovšek, Ph.D.
+Co-supervisor: Ekaterina Moskvina
+Title: Theoretical application of framework for Digital twin for operation and
+maintenance phase
+Document type: Master Thesis
+Scope and tools: 100p., 61 fig., 12 tab., 3 ann.
+Keywords: Digital twin, framework implementation, operation, and maintenance phase
+Abstract:
+The adoption rates of digital twin (DT) concepts and technologies in the architecture, engineering, and
+construction (AEC) sectors have significantly risen throughout the project lifecycle from the delivery to
+the operation and maintenance (O&M) phase. This is due to the potential and proven benefits of DT
+technologies to improve the efficiency and productivity of asset management, particularly during the
+O&M phase.
+The empirical evidence shows that DT concepts and technologies enable smart asset management by
+integrating all the O&M data to provide the real-time status of the assets. However, due to a lack of
+guidance and standard processes for DT implementation, the AEC industry is not able to fully leverage
+the potential of DT technologies for asset management during the O&M phase. Considering this barrier,
+this research work evaluates and analyses the state-of-the-art DT technologies through literature analysis
+combined with case studies and demonstrations of framework applications using the DT
+software/platforms (Dalux FM).
+The objective of this research study is to design and propose the optimum level of DT framework
+applicable during the O&M phase. The presented DT framework also establishes the clear process of
+Theoretical DT implementation during the operation and maintenance phase that may lead to innovative
+smart asset management.
+VII Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+»This page is intentionally blank«
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase VIII
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+ACKNOWLEDGEMENTS
+I would like to express my deepest gratitude to my main research supervisor Dr. Professor Tomo
+Cerovšek for providing unwavering support and guidance throughout my dissertation period. Your deep
+and invaluable subject knowledge, experience, and expertise have immensely helped me to accomplish
+this thesis work.
+My next heartfelt gratitude is extended to my second supervisor Mrs. Ekaterina Moskvina and her team
+from the partner institution (M/s Protim) for collaborating with this thesis development. Your
+association has helped me to get access to industry expertise and resources (IFC and BIM models). I
+will remain indebted for the support rendered to me whenever sought.
+My sincere appreciation is also extended to BIM A+ and all individuals associated with this study
+program, especially Prof Miguel Azenha and Dr Jose Granja for their valuable support.
+Finally, my heartfelt special thanks go to my parent, wife, and children who have always sacrificed their
+comfort to support my endeavor to learn new knowledge.
+IX Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+»This page is intentionally blank«
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase X
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+TABLE OF CONTENTS
+ERRATA......................................................................................................................................... II
+BIBLIOGRAFSKO – DOKUMENTACIJSKA STRAN IN IZVLEČEK....................................IV
+BIBLIOGRAPHIC– DOKUMENTALISTIC INFORMATION AND ABSTRACT................... VI
+ACKNOWLEDGEMENTS........................................................................................................ VIII
+TABLE OF CONTENTS.................................................................................................................X
+INDEX OF FIGURES...................................................................................................................XII
+INDEX OF TABLES .................................................................................................................. XIV
+LIST OF ACRONYMS AND ABBREVIATIONS ......................................................................XV
+1 INTRODUCTION.................................................................................................................... 1
+1.1 Problem Statement.............................................................................................................. 2
+2 DEFINITION OF DIGITAL TWIN........................................................................................ 4
+2.1 Historical Overview of Digital Twin ................................................................................... 4
+2.2 Theoretical Aspect of Digital Twin ..................................................................................... 5
+2.3 Industrial evolution (Industry 4.0)....................................................................................... 6
+2.4 General Concepts of Digital Twin....................................................................................... 9
+2.4.1 DT Model................................................................................................................... 9
+2.4.2 DT Classifications......................................................................................................10
+2.4.3 DT Characteristics .....................................................................................................12
+2.4.4 Digital Twin Process..................................................................................................13
+2.4.5 DT Benefits ...............................................................................................................14
+2.4.6 DT Foundational Technologies ..................................................................................15
+2.4.7 DT Lifecycle Use......................................................................................................18
+2.5 Digital twin in the AEC Industry........................................................................................19
+2.5.1 Building Smart Perspectives.......................................................................................19
+2.5.2 CDBB's Perspectives..................................................................................................21
+2.5.3 Digital Twin Maturity ................................................................................................23
+XI Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+2.5.4 Comparison of BIM and Digital Twin........................................................................25
+3 LITERATURE Review – STATE OF ART............................................................................28
+3.1 Literature Analysis............................................................................................................29
+3.2 Review of DT Application and Solution used - O&M phase..............................................33
+3.3 Review of Enabling Technologies Deployed For O&M phase............................................37
+3.3.1 BIM (Building Information Modelling)......................................................................37
+3.3.2 Internet of Things (IOTs) and Sensors Technologies..................................................38
+3.3.3 Big Data & Cloud Computing....................................................................................38
+3.3.4 Artificial Intelligence & Machine Learning Algorithms..............................................39
+3.4 Review of DT framework proposed for O&M stage...........................................................39
+4 METHODOLOGY FOR DEVELOPMENT OF DIGITAL TWIN FRAMEWORKS........47
+4.1 Background Review ..........................................................................................................47
+4.2 Development of DT Requirements - O&M Phase...............................................................48
+4.2.1 Smart asset management strategy...............................................................................48
+4.2.2 Develop Asset Information Model .............................................................................50
+4.2.3 Develop O&M Information Requirements..................................................................53
+4.2.4 BIM Model Requirement ...........................................................................................56
+4.2.5 Level of Information Need (LOIN) & LOD................................................................58
+4.3 DT Framework Development ............................................................................................61
+4.3.1 Case Study.................................................................................................................61
+4.3.2 Result Discussion ......................................................................................................73
+4.3.3 Proposed DT Framework for O&M Phase..................................................................77
+5 DT BENEFITS FOR THE O&M PHASE..............................................................................78
+6 LIMITATIONS & FUTURE WORK.....................................................................................79
+7 CONCLUSION .......................................................................................................................80
+8 BIBLIOGRAPHY...................................................................................................................82
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase XII
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+INDEX OF FIGURES
+Figure 1. Workflow procedure for Dissertation (Own Work).............................................................. 3
+Figure 2. Product Lifecycle Management (Grieves, 2006) .................................................................. 4
+Figure 3. Historical evolution of Digital Twin. (Hu et al., 2021)......................................................... 5
+Figure 4. The great industrial revolutions, (Ghobakhloo, 2020) .......................................................... 7
+Figure 5. Digital twin paradigm. (Boje et al., 2020)........................................................................... 9
+Figure 6. DT Classifications based on Dataflow (Own work)............................................................11
+Figure 7. DT types (Autodesk, 2021).................................................................................................12
+Figure 8. Digital twin features (Deloitte, 2020)..................................................................................12
+Figure 9. DT conceptual arthitecturearchitecture. (Deloitte, 2020)....................................................13
+Figure 10. Benefits of DT (Own Works) ...........................................................................................15
+Figure 11. Domain-based DT technologies ((Fuller et al., 2020)........................................................18
+Figure 12.PBO-I lifecycle (buildingSMART, 2022) ..........................................................................21
+Figure 13. Gemini Principle (Lu et al., 2020a)...................................................................................22
+Figure 14.Definition of DT (SPHERE, CDBB, 2020)........................................................................22
+Figure 15. Information value chain (SPHERE, CDBB, 2020)............................................................23
+Figure 16. DT maturity (Atkins, 2017)..............................................................................................23
+Figure 17. Level of DT sophistications (Autodesk, 2021) ..................................................................24
+Figure 18. Comparasion of BIM & DT (Davila Delgado and Oyedele, 2021).....................................26
+Figure 19. BIM maturity wedge (Quaye, G.M, 2021) .......................................................................27
+Figure 20. Relationship b/w BIM & digital twin (Quaye, G.M, 2021)................................................27
+Figure 21. Key questions of the literature review (Own works)..........................................................28
+Figure 22.Paper selection process (Own works).................................................................................29
+Figure 23. DT functions requirements for O&M (Own works)...........................................................39
+Figure 24. Dynamic DT framework for O&M of Building (Qiuchen Lu et al., 2019) .........................40
+Figure 25. DT-enabled asset management framework (Lu et al., 2021)..............................................41
+Figure 26. DT for anomaly detection of pump (Xie et al., 2020)........................................................42
+Figure 27. Conceptual Bottom-up DT framework (Zhao et al., 2022) ................................................43
+Figure 28.General DT framework for O&M phase (Quaye, G.M, 2021) ............................................44
+Figure 29. Development process of DT framework (Own works) ......................................................47
+Figure 30. Development of DT information requirements process (Own work)..................................48
+Figure 31. Strategic asset life cycle decision support system (IAM, 2022) .........................................49
+Figure 32. DT Incremental maturity level (Mêda et al., 2021)............................................................50
+Figure 33. Asset information modeling process flow (ISO 55000-1, 2014) ........................................51
+Figure 34. Information Exchange diagram (ISO 19650)....................................................................52
+Figure 35. Information exchange process during the operation phase (ISO 19650).............................52
+XIII Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 36. Asset classifications & AIM process for DT (Lu et al., 2021) ...........................................53
+Figure 37. The IFC schema mapping with other data sources (BMS and sensor system) (Lu, Xie,
+Parlikad, et al., 2020)........................................................................................................................56
+Figure 38. Level of information need framework (Own work)...........................................................57
+Figure 39. Scope of a case study (Own works)..................................................................................61
+Figure 40. Dalux FM modules (Own work).......................................................................................62
+Figure 41. Geolocation of project & building in location modules.....................................................63
+Figure 42. HVAC & Ventilation model of building ...........................................................................64
+Figure 43. Solibri ruleset for clash and building envelope check (solibri office).................................64
+Figure 44. Uploading, and processing mapping of floor in Dalux FM................................................64
+Figure 45. Federated 3D BIM Models (architectural, structural, and ventilation models) ...................65
+Figure 46. Dalux FM Interactive 2D and 3D visualization - (Dalux FM) ...........................................65
+Figure 47. The ventilation system of the building (Dalux FM)...........................................................65
+Figure 48. User roles and responsibilities in Dalux user modules (Dalux FM) ...................................66
+Figure 49. Ontologies mapping .........................................................................................................66
+Figure 50. Classification and properties definition for a ventilation system (Dalux FM).....................67
+Figure 51. Asset registration via the BIM link- (Dalux FM)...............................................................68
+Figure 52. Flow diagram of the work order process (Own Work) ......................................................68
+Figure 53. Workorder & tickets.........................................................................................................69
+Figure 54.Push message generated in Dalux FM ...............................................................................70
+Figure 55. User fields (Dalux FM) ....................................................................................................71
+Figure 56.Dashboard modules (Dalux FM) .......................................................................................72
+Figure 57. Progressive DT layers ......................................................................................................73
+Figure 58. Dalux FM O&M Integrations (Own work) .......................................................................74
+Figure 59. Physical & Digital Models (Own work)............................................................................76
+Figure 60. .DT framework for O&M of HVAC system......................................................................76
+Figure 61. Proposed DT framework for O&M phase .........................................................................77
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase XIV
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+INDEX OF TABLES
+Table 2.Definition of DT from various sources (Own Work) .............................................................. 5
+Table 3. DT enabling technologies ((Hu et al., 2021).........................................................................15
+Table 4.Ten papers were identified based on the thematic area of applications...................................30
+Table 5. Enabling technologies adopted for DT in O&M ...................................................................31
+Table 6. Qualitative analysis of DT framework .................................................................................44
+Table 7.. Summary of DT components for O&M phase (Own work) .................................................45
+Table 8. IFC extension for O&M activity (Lu, Xie, Parlikad, et al., 2020) .........................................54
+Table 9. LOIN - Architectural model.................................................................................................58
+Table 10. LOIN - Structural model....................................................................................................58
+Table 11. LOIN - MEP model...........................................................................................................59
+Table 12. Level of Details (LOD)......................................................................................................60
+XV Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+LIST OF ACRONYMS AND ABBREVIATIONS
+AEC Architecture engineering and construction
+BIM Building Information Modelling
+DT Digital Twin
+O&M Operation & Maintenance
+FM Facility Management
+LION Level of information need
+LOD Level of development
+CMMS Computerized maintenance management systems
+AMS Asset managemant system
+IOT Internet of things
+AI Artificial intelligence
+ML Machine learning
+IMM Institute of asset management
+Cobie Construction operation building information exchange
+CAD Computer-aided design
+AR Augmented reality
+VR Virtual reality
+CDBB Centre for Digital Built Britain
+NDT National digital twin
+AIM Asset information model
+AM Asset management
+IFC Industry foundation class
+bsi Building smart initiatives
+CDE Common Data Environment
+IMF Information management framework
+AWS Amazon web service
+Dorji, T. 2022. Theoritical application...framework for DT for operation and maintenance phase XVI
+Master Thesis. Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+»This page is intentionally blank«
+1 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+1 INTRODUCTION
+The Era of Industry 4.0 has brought significant progress in innovation and technology forefront, enabling
+the wide spectrum of industries to embrace digital technologies such as digital twin concepts to improve
+productivity and competitive advantage through its process enhancement. Ushering into industry 4.0 has
+promised significant value in terms of digital solutions that have never been possible prior to the advent
+of connected, smart technologies (Deloitte, 2020). The digital twin concepts allow the industry to
+maintain the complete digital footprint of the product throughout its lifecycle and most importantly
+achieve customer requirements/satisfactions through the realization of customized products, improved
+operation, and maintenance, reducing the rework and defects, solving the physical problem faster
+through early detections, predict an outcome with higher accuracy and ultimately achieving the better
+service and cost optimization to the customer (Adriaanse, Arjen et al., 2021)
+The adoption of digital technologies in the architecture, engineering & construction (AEC) sector has
+been slow mainly attributable to the nature of construction activities and a high degree of fragmentation
+within the AEC industry. However, with the increasing adoption of Building Information Modelling
+(BIM) by the AEC sectors, effective coordination among the fragmented stakeholders becomes possible
+due to BIM acting as the central repository for collating digital information about a project. The benefits
+of BIM adoption in the design and delivery phase have already been proven and widely practiced.
+However, the BIM adoption in the asset management areas during the operation and maintenance
+(O&M) phase has been limited. According to (Boje et al., 2020), This is partly due to the lack of
+awareness of BIM capabilities in facility management, poor data integration between BIM and IoT
+technologies, and also interoperability issues associated with legacy formats of BIM. Another
+researcher, (Lu et al., 2020a) cited the misalignment and complexity of the asset management framework
+with the BIM information management system. (Adriaanse, Arjen et al., 2021) stressed that, intensive
+use of advanced digital solutions is the only way to increase the productivity of the sector to innovate
+much faster. BIM implementation has set the initial step/environment toward digitalization of the AEC
+sectors by enabling visualization, coordination, simulation, optimization, and the ability to manage some
+degree of semantic data (Quaye, G.M, 2021). The possibilities of BIM integrations with other computing
+environments such as the internet of things (IoT), artificial intelligence (AI), and machine learning (ML)
+have the abilities to improve predictability, enhance decision making through real-time collaboration
+and enhance information flow throughout the project life cycle, optimize energy consumptions, improve
+hazard and risk mitigation, etc. (Quaye, G.M, 2021) (Maskuriy, et al., 2019).
+The most simplistic definition of a digital twin (DT) is defined as '' a digital replica of a real-world
+entity connected by bidirectional information and data flow'' (Opoku et al., 2022). DT is fundamentally
+referred to as a concept driven by sets of technologies such as artificial intelligence, machine learning,
+and data analytics and creates digital shadows that can provide insight and learning to the physical
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 2
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+counterpart. (Lu et al., 2020a). Unlike BIM, DT has the capabilities to pull the data from heterogeneous
+sources to perform data analytics such as prior scenario simulations on the test bed before the installation
+of a physical asset and verify the as-built conditions.
+The focus of the thesis is to conduct a comprehensive digital twin state-of-the-art review in the area of
+BIM-enabled asset management during the O&M phase, review the standards, good practice, and
+framework applied for the DT application in the O&M phase, and conduct the case study on the thematic
+area using the available platforms and software applications. The final goal of this study is to propose
+an adequate level of DT framework for implementing the DT concepts and technologies for the O&M
+phase.
+1.1 Problem Statement
+BIM adoption is largely confined to the delivery phase of the project which acts as the central repository
+for collating digital information about a project. However, its associated benefits and capabilities in the
+asset operation and maintenance phase is still limited and seen as evolving profile (Quaye, G.M, 2021).
+The reason for the limitations of BIM asset management maturity is attributable to reasons such as the
+legacy format of BIM, and the interoperability issue. The digital twin concepts have brought many
+capabilities to enhance the limitations posed by the current BIM asset management process.
+BIM-enabled asset management requires asset-related data to be collected during the design
+construction phase for the intended purpose of the facility management goal envisioned. This is mainly
+done using the Cobie process (construction operation building information exchange format). This asset
+data are further transferred to various Facility Management (FM) information systems, such as EMS
+(energy management systems), CMMS (computerized maintenance management systems), BAS
+(building automation systems), EDMS (electronic document management systems), (Halmetoja and
+Lepkova, 2022). However, these systems lack the interoperability and visualization capabilities required
+for smart asset management.
+The goal of this thesis is to investigate the state-of-the-art asset management process using the BIM
+digital twin framework to improve the performance of asset management by evaluating each aspect of
+the asset management realm classified under technology-related issues, information-related issues, and
+organization-related issues. This evaluation shall be further aligned to international asset management
+standards -55000 and other regional best practices of Gemini Principal developed by digitally built
+Britain (dBB), CDBB. The ultimate goal is to develop a digital twin framework with the right level of
+information requirements and level of details/development for the practical application of digital twins
+in the operation and maintenance phases.
+'RUML77KHRUHWLFDODSSOLFDWLRQIUDPHZRUNIRU'7IRURSHUDWLRQDQGPDLQWHQDQFHSKDVH
+0DVWHU7KHVLV/MXEOMDQD8/)**6HFRQGF\FOH0DVWHUVWXG\3URJUDPPH%XLOGLQJ,QIRUPDWLRQ0RGHOOLQJ±%,0$
+)LJXUH:RUNIORZSURFHGXUHIRU'LVVHUWDWLRQ2ZQ:RUN
+/HYHORI
+GHYHORSPHQW
+WR
+XSGDWHWKH
+%,0PRGHO
+IRUWKHJRDOV
+RI)0
+([SORUHWRROVDQG
+VRIWZDUHWR
+GHYHORS/2'
+/,21
+'HYHORS
+LQIRUPDWLRQ
+UHTXLUHPHQWV
+'HYHORS
+LQIRUPDWLRQ
+UHTXLUHPHQWV WR
+HQDEOH 'LJLWDO
+WZLQ
+(YDOXDWHWKH
+OHYHO RI
+PRGHOVDQG
+VROXWLRQVLQ
+XVH
+8VHG FDVH RI
+$(& )0 GLJLWDO
+WZLQ  %,0 PRGHO
+DQG ,QIRUPDWLRQ
+PRGHO
+6WXG\WKH
+FXUUHQWVWDWH
+RIDUW'LJLWDO
+7ZLQ
+/LWHUDWXUH UHYLHZ
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 4
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+2 DEFINITION OF DIGITAL TWIN
+2.1 Historical Overview of Digital Twin
+According to (Pronost et al., 2021), The first trace of digital twins dates back to between 1967 and 1972
+when NASA launched the first Appolo 13 mission. Based on the historical record, NASA engineers
+built a replica of spacecraft on Earth to train the astronaut in a simulated environment before the mission
+to predict the different probable scenarios of the flight and finally find out the solutions to solve the
+problem remotely in case it happened. With the mirrored physical model and simulated environment,
+NASA was able to safely land the crippled spacecraft using a physical model solution when the
+spacecraft faced an emergency battery failure. This twin concept, applied by NASA, is the first evidence
+that a physical object provides information to its virtual counterpart. However, according to (van der
+Valk et al., 2020), no real connection was made between digital representations and the physical object.
+The separate physical object was stationed on the ground simulated by the digital environment to
+stimulate solution in the event of a problem faced by the spacecraft and transmit the solution to the
+astronaut for manual application. Thus, the direct connections between the physical object and its digital
+representations have not been achieved (Pronost et al., 2021).
+PLM concepts were proposed by Dr. Michael Grieves at the University of Michigan (2003) as the
+equivalent of virtual digital representations for physical products (Hu et al. al., 2021). This model was
+described as a'' Mirrored spaced model'' instead of on digital twin (DT) (Pronost et al., 2021). The PLM
+model comprises both an actual physical system and a new virtual replica, hosting all the data of the
+physical artifact. This is referred to as the "twinning" or "mirroring" of an actual physical system
+throughout its life with a connected virtual system (Quaye, G.M, 2021)
+Figure 2. Product Lifecycle Management (Grieves, 2006)
+In 2012, NASA formally defined the term "Digital Twin" (DT), recognizing the enormous potential it
+has for the discipline of aerospace engineering (Bhatti et al., 2021). Since then, extensive study has been
+conducted to determine how digital twin concepts might be used practically in fields other than
+5 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+aeronautical engineering. Digital conceptions were generally stationary and confined to a few sectors,
+such as aerospace and manufacturing, between 2013 and 2017. This is explained by the technologies
+necessary to put them into practice, including information and communication technology, sensor and
+monitoring technology, the Internet of Things (IoT), and big data simulation and analysis technology,
+according to Pronost et al. (2021). With the advent of Industry 4.0 and the development of fields like
+Big Data or the Internet of things, these needs cannot be met (IoT). Large amounts of data may be
+collected and processed due to technological advancements in this domain, making it feasible to acquire
+important information. (Pronost et al., 2021). DT was ranked among the most promising technologies
+for the upcoming decades by Gartner in 2017 and 2019. (Kumar and Teo, 2021).
+Figure 3. Historical evolution of Digital Twin. (Hu et al., 2021)
+2.2 Theoretical Aspect of Digital Twin
+A digital twin is a hype term. It is often used in today's discussions about digitalization, smart production,
+and industry 4.0 (Peng et al., 2020). Based on the literature review of digital twin (DT) terminology and
+concepts, the definition of digital twins varies depending on the industry/domain and its purpose/usage.
+All industries have defined the digital twin according to their specific domain perspectives, However,
+most terminology overlaps with some specific to their industries. Some of the definitions of digital twin
+from prominent industries players are mentioned below;
+Table 1.Definition of DT from various sources (Own Work)
+References Definitions
+(Grieves, 2016) "Digital Twin (DT) [...] is a set of virtual information constructs that fully
+describes a potential or actual physical manufactured product from the micro
+atomic level to the macro geometrical level. [...] That describes [...] Operational
+States captured from actual sensor data, current, past actual, and future
+predicted. [...] for a variety of purposes"
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 6
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+(Autodesk, 2021) "A digital twin is a dynamic, up-to-date replica of a physical asset that brings
+together design, construction, and operational data. With the addition of realtime operational data, digital twins acquire the behavioral awareness necessary
+to simulate, predict and inform decisions based on real-world conditions"
+Siemens "A digital twin is a virtual representation of a physical product or process, used
+to understand and predict the physical counterpart’s performance
+characteristics. Digital twins are used throughout the product lifecycle to
+simulate, predict, and optimize the product and production system before
+investing in physical prototypes and assets".
+buildingSMART
+International
+"A digital twin (DT) - also referred to as digital shadow, digital replica or digital
+mirror - is a digital representation of a physical asset. Linked to each other, the
+physical and digital twins regularly exchange data throughout the PBOD
+lifecycle and use phase. Technology like AI, machine learning, sensors, and
+IoT allows for dynamic data gathering and right-time data exchange to take
+place".
+Wikipedia "A digital twin is a virtual representation that serves as the real-time digital
+counterpart of a physical object or process''.
+SPHERE "A Digital Twin is a dynamic, virtual representation of a building, its assets,
+processes, and system".
+IBM ''A digital twin is a virtual representation of an object or system that spans its
+lifecycle, is updated from real-time data, and uses simulation, machine
+learning, and reasoning to help decision-making''.
+According to (Hu et al., 2021), the definition of DT illustrated above in different applied fields reveals
+the following commonalities;
+- The foundational element of DT includes a physical object, virtual counterpart, and
+connection between them implicitly and explicitly.
+- Data transmission between the physical artifact and the digital model is highlighted.
+2.3 Industrial evolution (Industry 4.0)
+Industry 4.0 was conceptualized based on the fourth industrial revolution that has taken place in the
+manufacturing industry (Ghobakhloo, 2020). Industry 4.0 has contributed to significant digitalization of
+the manufacturing industry impacting the entire value chain. One of the biggest innovations of industry
+4.0 was digital twins concepts and technologies that were widely adopted by many industries (Quaye,
+7 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+G.M, 2021). Industry 4.0 promotes an open, smart manufacturing platform for industrial-networked
+information applications. Real-time data monitoring, tracking of the status and positions of the product
+smart control of production processes are some of the outcomes achieved through the application of DT
+concepts and technologies. (Vaidya et al., 2018).
+Figure 4. The great industrial revolutions, (Ghobakhloo, 2020)
+According to (Maskuriy et al., 2019), The first industrial revolution started with water and steampowered engine (1784), the second industrial revolution was mass production powered by electric
+energy (1870), and the third revolution started a program logic circuits (PLC), and information
+technologies (IT) systems (1969). During the same era, the AEC industry evolved with computer-aided
+design (CAD), and prefabrications and gradually entered into the 3D design (object-oriented design).
+The era of industry 4.0 started in the year 2011 with a higher level of value and control which was not
+possible in the prior era (Vaidya et al., 2018). In the manufacturing sectors, more innovative processes
+and control emerged such as smart machines, smart factories, and Cyber-Physical Systems (Quaye,
+G.M, 2021). Industry 4.0 enables smarter ways of manufacturing production in the factory through
+integrations of multiple connected systems. The triggering technologies were Digital Twins, IoT,s,
+sensors, big data, cloud computing, systems integration, AR/VR, and simulation engines (Quaye, G.M,
+2021).
+Big Data and Analytics; Real-time decision-making will increasingly rely on the gathering and
+processing of data from heterogeneous sources, including customers, business management systems,
+and production equipment or systems. The record indicates four components that make up big data:
+quantity, variety, speed of creation and analysis of new data, and value of the data (Vaidya et al., 2018).
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 8
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Data analysis of previously collected data is used to identify threats that have previously happened in
+various production processes in the industry, forecast new concerns, and provide potential solutions to
+prevent them from happening repeatedly (Maskuriy et al., 2019).
+Autonomous Robots; In locations where human workers are not allowed due to several risks, an
+autonomous robot is employed to carry out autonomous manufacturing procedures with more accuracy.
+Robots that operate autonomously may execute tasks quickly and accurately while putting a strong
+emphasis on teamwork, flexibility, and safety. (Vaidya et al., 2018).
+Simulation: The physical environment, including processes, machines, products, and people, is
+replicated in a virtual model using real-time data. This improves decision-making by allowing for
+insights obtained from various parameter adjustments and visualization. For virtual commissioning,
+simulation of cycle times, energy usage, or ergonomic features of a production facility, 2D and 3D
+simulations can be produced saving huge amounts of cost and time. It is possible to reduce product
+failures during the startup phase and shorten downtimes by using simulations of production processes.
+Additionally, to increase the robustness of processes, simulations are utilized to reflect what-if scenarios
+(Quaye, G.M, 2021).
+System Integration: Three types of integration primarily characterize Industry 4.0: (a) horizontal
+integration throughout the entire value chain, (b) vertical integration and networked manufacturing
+systems, and (c) end-to-end engineering throughout the lifecycle. Automation of vertical and horizontal
+manufacturing processes includes entirely digital integration, automation, and communication (Quaye,
+G.M, 2021).
+The Internet of Things; Internet of things (IoT) stands for a worldwide network of interconnected and
+uniform addressed objects that communicate via standard protocols (Vaidya et al., 2018). The main
+purpose of IoT is to support data sharing and enable seamless communication from the physical
+environment through sensor networks with the digital counterpart. The emergence of IoT technologies
+aided many industries to achieve automation in their field. (Kumar, et al., 2019).
+Cloud-based platform; Serves as a technical backbone for the connection and communication of
+elements essential in the DT. Companies generate a tremendous quantity of data during their lifecycle.
+These data are frequently shared within and outside the organization for multiple reasons. Building the
+own database and server to host the data shall result in significant cost implications both for
+infrastructure and maintenance. Therefore, a cloud-based platform is regarded as one of the most
+essential components necessary for DT operation. Other technologies associated with the fourth
+industrial revolution are augmented reality (AR) and virtual reality (VR) (Vaidya et al., 2018).
+9 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+2.4 General Concepts of Digital Twin
+2.4.1 DT Model
+According to (Boje et al., 2020), the concepts of the DT can be expressed using three main components
+which include the following,
+1) Physical elements
+2) Connected data
+3) Virtual counterpart
+Figure 5. Digital twin paradigm. (Boje et al., 2020)
+The features and applications of digital twin models across industries are largely similar in design,
+delivering dynamic and real-time data for planning and controlling activities. (Boje et al., 2020), The
+connecting loop between the Virtual to Physical system and the data in various forms is the fundamental
+component of any digital twin model. The data traveling from the Physical object to the virtual comes
+in raw format and required some amount of processing, on the contrary, data moving from the digital
+model to the physical objects are subjected to several transformations. These data are regarded as
+processed information from data analytics and stored knowledge in digital models. The final output of
+analyzed data is pushed back to the Physical system through human interventions or automatic
+mechanical actuators. Essentially, the real-world data fed from physical systems to the virtual models
+are being processed and analyzed based on embedded engineering models to manage the physical
+object/asset efficiently.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 10
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+2.4.2 DT Classifications
+According to Wikipedia,(“Digital twin,” 2022), '' A digital twin (DT) concept is classified into the
+following types;
+Digital Twin Prototype (DTP); DTP includes the design, analysis, and processes to create a physical
+product. DTP existed before the physical product.
+Digital Twin Instance (DTI); DTI is a digital copy of a solo version of a product after the product is
+manufactured.
+Digital Twin Aggregate (DTA); A DTA is an aggregation of DTIs whose data and information can be
+used for querying, predicting, and understanding the physical product. The specific information
+contained in digital twins is determined by use cases. The digital twin is only a logical construct and
+does not necessarily contain the data and information in itself. The actual data and information may be
+stored in other applications connected through semantic meaning and ontology relationships (“Digital
+twin,” 2022).
+(Pronost et al., 2021) developed further classifications of DT based on their maturity level (digital model,
+digital shadow, digital twin) and integration level. The decision tree of the Digital Twins subcategories
+used is shown below;
+Figure 6. DT classifications framework (Own work)
+(1) Pre-Digital Twin; This version of DT contains only a digital model; There are no physically
+existing object counterparts yet. This model can only be created using the theoretical data
+11 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+provided at the model's input. Before the actual system is implemented, this form of DT is
+generally created during the design phase to test the design outcomes and reduce potential risks.
+(2) Digital Model; Any digital depiction of a physical item that "does not use any sort of automated
+data interchange between the physical object and the digital object" is referred to as a digital
+model (Fuller et al., 2020). This class of digital twins has a physical counterpart, unlike preDT. It is possible to feed a digital object with measured data from the input and output of the
+real system and compare the reliability of its output response to that of the real system. . The
+digital model enables comparison between the virtual representation of the object it represents
+and the actual object to ensure accuracy.
+(3) Digital Shadow; According to (Fuller et al., 2020), A digital shadow is a virtual representation
+with a singular automatic data stream, such that when the actual object changes, the digital copy
+is updated automatically. However, reverse dataflow is limited. Instead of automated feedback
+loops caused by changes in the digital representation that are based on simulations, changes to
+the physical system only come about as a result of more conventional human judgments. Its
+uses include predictive maintenance and real-time operation visualization.
+(4) Digital Twin; Digital twins are composed of a physical entity and a digital entity which are
+connected via a network to allow for seamless connectivity and continuous information sharing
+via direct physical communication or through indirect connections based on the cloud. The
+automatic input to the virtual object enables the dynamic updating of the model. The goal is
+then accomplished by using the model to create an effective command for the physical
+equivalent of the virtual object. DTs can optimize processes carried out by the actual system,
+such as manufacturing operations optimization.
+Figure 6. DT Classifications based on Dataflow (Own work)
+According to Autodesk, digital twins are created at different levels of assets in a scalable manner
+beginning from a single component to an asset, process, system, or network of the system for the entire
+city or country;
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 12
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 7. DT types (Autodesk, 2021)
+2.4.3 DT Characteristics
+As per (Singh et al., 2021), some of the common DT features and characteristics are summarized below;
+High-fidelity; This is governed by the standard of the parameters, their correctness, and the extent to
+which virtual and physical counterparts have been separated from one another. A highly realistic digital
+model aids DT in accurately reflecting every feature of its actual twin (Singh et al., 2021). When given
+a variety of potential outcomes or scenarios, highly detailed DT makes simulation and prediction
+systems more accurate (Jones et al., 2020).
+Figure 8. Digital twin features (Deloitte, 2020)
+13 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Dynamic; The dynamic aspect is signified by its response relative to time. DT model should be capable
+of changing the physical system as per a change in physical parameters or inputs fed either manually or
+automatically (dynamic data, historical static data). This is enabled through the seamless exchange of
+dynamic data continuously between the physical and virtual models. The dynamic nature of DT is
+indicated by its ability to realistically mimic the physical twin in the digital world
+Self-evolving; DT changes throughout its life cycle along with its physical counterpart. A closed
+feedback loop results from any change in either the physical or digital counterpart reflecting itself in the
+other. With the support of the data gathered by the physical object in real-time, DTs are capable of selfadapting and self-optimizing, evolving throughout their existence alongside their physical counterparts
+(Barricelli et al., 2019).
+Multiscale and Multiphysical; The properties of the physical twin must be integrated into DT, which
+is a virtual clone of its physical twin, on one or more levels. As a result, the virtual model in DT is based
+on the physical pair's macro-geometric characteristics, such as shape, size, tolerance, etc (Singh et al.,
+2021). DT is also multiphysical because in addition to the aforementioned geometric characteristics, the
+model is also based on the physical characteristics of the physical twin, including material characteristics
+like stiffness, strength, hardness, and fatigue strength as well as structural dynamics models,
+thermodynamic models, stress analysis models, and fatigue damage models.
+Multidisciplinary; The primary aspect of Industry 4.0 is the digital twin Which evolved as the result
+of multidisciplinary fields such as information technology, computer science, electrical, mechanical,
+electronic, and communications.
+2.4.4 Digital Twin Process
+Figure 9. DT conceptual arthitecturearchitecture. (Deloitte, 2020)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 14
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Create; To conduct critical measurements of the input from the physical process and its surroundings,
+the first step is to equip the physical process with a variety of sensors. Two types of sensor measurements
+are deployed. (1) Performance indicators of the physical standards set for an asset, (2) External data
+influencing the performance of physical assets. Sensor readings are transferred to the digital twin after
+being encoded into secure digital signals. Process-based information from systems like manufacturing
+execution systems, enterprise resource planning systems, CAD models, and supply chain systems can
+be included to improve sensor signaling. As a result, the digital twin will have a stream of data that is
+continuously updated for use as input in its analysis.
+Communicate; Communication between the physical process and the digital platform facilitates
+seamless, real-time, bidirectional integration and connectivity. One of the revolutionary innovations that
+made the digital twin possible is network communication, which consists of three main parts: Edge
+processing, Interfaces for communication, and Edge Safety
+Aggregate; Data is processed and prepared for analysis and can be imported into a data warehouse.
+Data processing and aggregation are possible both on-premises and on cloud platforms. Recent
+advancements in the fields of technology that support data collection and processing have made it
+possible for architects to design designs that scale more quickly and inexpensively than in the past.
+Analyze; Data analysis and visualization are done. Advanced analytics platforms and technologies can
+be used by data scientists and analysts to build iterative models that produce insights and suggestions
+and help people make decisions.
+Insight; Insights from the analysis are provided through dashboards with visualizations, exposing
+unanticipated differences in the performance of the digital twin and the physical world model at one
+location. or multi-dimensional, and they might highlight areas that require additional scrutiny and
+modification.
+Act; To fulfill the goal of the digital twin, this stage enables the actionable insights to be collected and
+transmitted back to the physical asset through the digital process. After passing through the decoder, the
+data is sent to the asset's process actuators, which are in charge of the movement or control mechanisms,
+and is subsequently updated in back-end systems that control the supply chain. response control and
+behavioral management affecting people. The closed loop connection between the physical world and
+the digital twin is completed by this interaction.
+2.4.5 DT Benefits
+From Autodesk's perspective, Using digital twins, it is possible to see an asset from many different
+angles, including how it is used, how it is used, how much space is being used, and how traffic flows
+through it. A digital twin offers a method to explore "what-if" scenarios, such as the ramifications of
+15 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+design modifications, adverse weather conditions, and security threats. It gathers a significant amount of
+data in one location. The value from operations is exponentially improved, development effort is
+reduced, and time to market is accelerated by creating digital twins of complex assets, factories, and
+processes.
+Figure 10. Benefits of DT (Own Works)
+2.4.6 DT Foundational Technologies
+To support DT creation, a variety of enabling technologies is required to be deployed. (Fuller et al.,
+2020; Hu et al., 2021; Tao et al., 2019) proposed the following enabling technologies for DT;
+Table 2. DT enabling technologies ((Hu et al., 2021)
+Application area Functionalities Technologies Deployed
+Technologies for physical
+objects
+To measure the parameters of
+the real-world and physical
+object
+Reverse engineering, image
+recognition, particle detection,
+and IoT sensing technologies
+Control technologies deployed
+for controlling a physical
+object
+determining a power source
+(such as electrical or hydraulic
+power), designing a mechanical
+Optimized performance
+Actionable insights,
+simulations, and a connected
+view of all online and offline
+data enable quick and better
+decisions to optimize
+performance and efficiency.
+Smarter predictions
+With real-time sensor data
+and predictive
+recommendations through
+machine learning and artificial
+intelligence, maintenance and
+operations are significantly
+improved. faster results.
+Full view of all data
+Eliminate data silos and
+unlock value across a
+project’s lifecycle with all
+historical data and real-time
+data in one place.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 16
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+transmission (such as a gear,
+belt, or connecting rod drive),
+and control technologies (e.g.
+programmable control,
+supervisory control, simulationbased control, etc.)
+Data construction and
+management technologies
+Enabling technologies for data
+storage and extraction from
+physical to virtual system and
+vice versa
+IoT technologies used are QR
+code, barcode, radio frequency
+identification (RFID)
+Data storage and linking
+technologies
+MySQL database, Hbase,
+NoSQL database
+Data mining, Processing,
+visualization and advance data
+analytics
+Statistical analysis, predictive
+modeling, data mining, text
+analysis, optimization, realtime scoring, and machine
+learning are all examples of data
+mining.
+Data visualization uisng tables
+and graphics (histograms, bar
+charts, pie charts, etc.).
+Using extract, transform, and
+load (ETL), which includes
+Kalman filtering, image
+regression, principal component
+transform (PCT), the K-T
+transform, the wavelet
+transform.
+Virtual modeling technologies Technologies to model
+geometry of virtual counterpart
+(shape, size, position and
+assembly relationship),
+behavioural model, rule based
+model
+computer-aided design (CAD)
+software such as Revit,
+Autocadd, solidworks, Kmeans, and neural network,
+semantic data analytics, and
+XML-based specific data
+17 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+format (AutomationML, and
+CityGML
+Services technologies Based on the objectives, types
+of service technologies varies
+accordingly. (prediction,
+monitoring, diagnosing, service
+life, real-time visualization)
+Real-time visualization using
+computer graphics, 3D
+rendering technology and image
+processing.
+Connection and data
+transmission technologies
+To realize real-time control and
+virtual-real state mapping,
+connection methods with high
+fidelity
+Wireless transmission
+technologies include Zig-Bee,
+Bluetooth, Wi-Fi, ultra-wide
+band (UWB), and nearfield
+communication. Wire
+transmission technologies
+include twisted pair (category 5
+and 6), coaxial cable (coarse
+and fine), and optical fiber
+(single-mode and multimode)
+(NFC)
+GPRS/CDMA, digital ratio,
+spread spectrum microwave
+communication, wireless
+bridge, and satellite
+communication are examples of
+long-distance wireless
+transmission technologies.
+Environment coupling
+technologies
+Environmental mapping
+technologies
+technologies for remote
+sensing, the seismic wave
+approach, polarization, radio
+navigation, hydroacoustic
+location, and 3D modeling
+Visualization of environment Wearable gadgets with
+immersive stereoscopic
+displays (such as head-mounted
+displays and haptic gloves)
+integrated with virtual reality
+(VR) and mixed reality (MR)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 18
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 11. Domain-based DT technologies ((Fuller et al., 2020)
+2.4.7 DT Lifecycle Use
+Tao, et al (2018) described how the digital twin concepts can be implemented throughout a product
+lifecycle as summarized below;
+Design Phase; Digital Twin Prototype (DTP) is utilized to evaluate how hypothetical assets will behave,
+validate different design choices, ensure that the product meets standards, avoid failure, and maintain
+product quality (Tao et al., 2018). The development of CAD software has enabled designers to produce
+complex 3D models that can communicate clearly in a variety of settings, which has made the digital
+twin feasible. Increasing simulation capability helps to ensure product quality, avert failure, and exceed
+expectations. The DTP process includes stages for conceptual design, detailed design, and virtual
+verification and highlights the benefits of testing a design utilizing information on the physical qualities
+of clients, materials, equipment, and environments, as well as historical data from the most recent
+generation before manufacture begins.
+Build/Manufacture Phase; For the production stage, the concept of the digital twin is used to create
+Digital Twin Store Floor (DTSF) by merging physical space and information space. (DTSF) supports
+efficient production planning, resource allocation, and control of the manufacturing process. DT
+architecture for this phase consists of Physical Shop Floor (PS), Virtual Shop Floor (VS), Shop Floor
+Service System (SSS), and Shop Floor Digital Twin Data (SDTD). This DT framework allows the owner
+to predict the outcome of the unit/shop through simulations of different situations enabling the owner to
+choose the most optimized manufacturing solutions. Costly downtime of the factory can be avoided and
+Application Domain
+Model
+arthitecture and
+visualisation
+Softwares and
+APIs
+Data Collection
+and
+Preprocessing
+Middleware
+Domain
+Storage
+technology
+Data
+Processing
+Networking Domain
+Communicatio
+n technology
+Wireless
+Technology
+Object Domain
+Hardware
+technology
+Sensor
+technology
+19 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+predictive maintenance can be made possible. This continuous flow of dependable information enables
+more rapid, effective, and reliable production processes. (SIEMENS, 2020).
+Operational/Service Phase; This lifecycle phase is defined by heterogeneous and extensive layers of
+data that characterize the use and maintenance of the product and materials. An inefficient operation and
+maintenance strategy will lead to the risk of costly failure and threats to the operator. DT concepts can
+support proactive maintenance based on the strategic asset management principle such as using specified
+material, and correct structural configuration as compared to the conventional approach of the run to
+failure maintenance. (Tao et al., 2019) devised a framework based on real-time monitoring leveraging
+cutting-edge hardware and network technologies, enabling data on energy usage, user behavior and
+configuration, product performance, materials, component wear details, etc. Real-time and historical
+data integration makes it easier for the service owner to comprehend the status of the operation,
+including energy consumption analysis and forecasting, user management and behavior analysis,
+operational guidance for users, intelligent optimization, and updating, product failure analysis and
+prediction, and product maintenance plan.
+2.5 Digital twin in the AEC Industry
+It is evident from the preceding sections, the DT paradigm has gained significant traction in the
+manufacturing and aerospace sector as a means to tackle PLM-related issues and foster greater
+efficiency and productivity. On the contrary, the AEC industry is not able to fully embrace the DT
+concepts and technology from the fourth industrial revolution due to industry fragmentation. However,
+with significant technological advancement within the AEC industry, the concept of a digital twin is
+being increasingly deployed throughout the lifecycle of Building and infrastructures reshaping the entire
+industries. This chapter aims to analyze the cutting-edge DT concepts utilized by the AEC
+industry throughout the different phases of its life cycle. Among the many industry players involved in
+the implementation of the DT concepts and technologies, some of the most pioneering organizations
+making significant contributions to the research and implementation of DT in the AEC sectors are
+BuildingSmart, CDBB (Center for digital built Britain), and 4 years SPHERE project. The summary of
+their notable contribution is discussed below;
+2.5.1 Building Smart Perspectives
+The building smart initiatives (bsi) (buildingSMART, 2022) contend that the adoption of DT
+transformational technologies by the built environment can generate significant value (economic, social,
+environmental, and business). However, to unlock the benefits of DT, the built industry should break
+the existing organizational silos among the stakeholders and adopt collaborative practices. The
+implementation of DT by the built environment will incur huge investments due to the paradigm shift
+in technologies required. The built asset industry remains constantly challenged by demographic change,
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 20
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+urbanization, and climate change in addition to the normal aging and renewals demands of an asset,
+causing enormous cost and budget implications. These factors demand the built asset industry be more
+productive and innovative throughout its lifecycle. To counter the pressure exerted on the poor
+performance of the assets, data-driven solutions are viewed as one of the most potent means to optimize
+business processes, manage capacity constraints, boost productivity, and ultimately drive organizational
+performance (buildingSMART, 2022).
+The primary mission of building smart initiatives (bsi) is to provide the platform for developing open
+digital solutions and standards for the adoption of DT in the built asset industry. the organization
+supports the industry by delivering an open international standard to enable digital ways of working and
+ensures the successful implementation of the DT concept. Building smart believes that, with better data
+management and governance and further integration with standardization, the digital twin of any system
+can be easily created. (bsi) is also responsible for bridging the gap among the key organizational bodies
+to integrate the technologies and align the schemas with IFC protocols. (bsi) focuses on technical aspects
+(data exchange standards, protocol specifications), as well as vocabulary definition, business processes
+definition, and common use case identification (buildingSMART, 2022).
+Building smart describes DT as the digital replicas of physical assets across all phases of the PBO-I
+(Plan-Build-Operate-Integrate) lifecycle. Digital twin aids in better planning and design during the early
+stage of a project and provides optimization and productivity during the O&M phase. Enabling
+technologies such as IoT sensors, artificial intelligence, and machine learning facilitate real-time data
+exchange between the physical and digital counterparts and supports data analytics which enables better
+decision-making and timely action. With connected assets, the ecosystem of a digital twin for the whole
+built environment can be created to deliver greater value to the nation (buildingSMART, 2022).
+For the AEC player to enable the adoption of digital twin concepts and technologies, (bsi) identifies
+three critical areas of development which is essential for bridging the existing gaps listed below; (1) data
+model standards – For collecting and production of data models to operate at various levels, several data
+models are necessary. This ensures data interoperability between the layers and breaks the data silos. It
+also enables open, secure, reliable data sharing throughout the industry stakeholders; (2) standards for
+data management and integration – bind data science and information management together. The
+standards integrate the data to achieve semantic precision; (3) data security and privacy – (bsi) as the
+facilitator for creating the enabling environment provides a safe platform for data hosting and sharing
+(buildingSMART, 2022).
+21 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 12.PBO-I lifecycle (buildingSMART, 2022)
+2.5.2 CDBB's Perspectives
+The Centre for Digital Built Britain (CDBB) is an organization instituted by the UK government to
+digitize the entire AECOO sector throughout its lifecycle through the adoption of digital twin concepts
+and technologies. SPHERE is a special purpose vehicle constituted under CDBB to undertake the four
+years horizon project involving more than twenty partners to jointly develop the digital twin for the
+design, construction, and operational phase of the building project.
+The main objectives of (SPHERE, CDBB, 2020) are;
+(1) To create an ecosystem of a digital twin for the entire nation referred to as National Digital
+Twin. The network of connected DTs ensures better outcomes for the built asset environment.
+The national digital twin will ultimately support the delivery of better performance, and quality
+of assets, processes, and systems in the built environment.
+(2) To create an information management framework that will enable secure, adaptable data sharing
+as well as efficient information management.
+(3) To create a Task Group for Digital Framework comprising people from academic institutions,
+researchers, industry players, and government to share knowledge and findings.
+One of the important contributions of CDBB is the publishing of Gemini Principles as guidance
+documents for implementations of the National Digital Twin (NDT) project, Gemini principles provide
+the best practice of building digital twins through the adoption of nine (9) values (9 main principles).
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 22
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 13. Gemini Principle (Lu et al., 2020a)
+The information management framework plays a crucial role in the adoption of digital twins by fostering
+a common unified language among the stakeholders to exchange and share the asset data efficiently and
+securely in the machine-readable format. Since the DT requires capturing and exchange of data from
+multiple sources, the information management framework standardizes the process of data capture and
+exchange in a consistent manner leading to effective insight and decision-making processes (SPHERE,
+CDBB, 2020).
+To initiate the common definition of DT in the AECOO sectors, CDBB propose new definitions from
+SPHERE for the building DT as appended below;
+Figure 14.Definition of DT (SPHERE, CDBB, 2020)
+Describes building
+asset during the
+delivery phase and
+contains the
+information
+required for
+describing the
+physical twin from
+its virtual version
+Building DT linked
+to physical
+counterpart
+throught its
+lifecycle including
+the operational
+phase
+Aggeragations of
+multiple DTI's to
+provide direct
+access through
+computing
+constructs.
+Its main purpose
+are Predictive
+(intimately linked
+with simulation
+tools of DTP and
+DTI), and
+Interrogative
+(applying DTI and
+DTA for in-depth
+analysis).
+23 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 15. Information value chain (SPHERE, CDBB, 2020)
+2.5.3 Digital Twin Maturity
+Figure 16. DT maturity (Atkins, 2017)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 24
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+The value & sophistication of DT increases with the level of its maturity. proposed a DT maturity
+spectrum as shown in Figure 16. Fundamentally, the level of DT maturity implemented should be
+justified by the corresponding value generation. There are six levels of maturity. The execution of
+maturity-level is not limited to linear development, sometimes twins at lower maturity levels may exhibit
+the characteristics of the higher DT, The maturity ranges from element 0 to element 5.
+According to Vertantix, the level of digital twin's sophistication is illustrated in figure 17.
+Figure 17. Level of DT sophistications (Autodesk, 2021)
+The level of sophistication/maturity of DT is dependent on the volume and caliber of data gathered from
+the physical twin and its surroundings, according to Singh et al. (2021).
+Partial DT: A small number of data points, including pressure, temperature, and humidity, are used to
+assess the connectivity and functionality of DT.
+Clone DT: It contains all crucial details about the system or product that may be utilized to make
+prototypes and categorize various development stages.
+Augmented DT: It utilizes both historical data and data from the asset, and while doing so, it also makes
+use of algorithms and analytics to synthesize and correlate the relevant data.
+The acquisition of more data sets throughout the operation can increase DT complexity. (Azad M. Madni
+et al.) categorized DT into four levels as follows;
+Pre-Digital Twin: DT is created before the creation of the real product to make decisions concerning
+the designs of prototypes, reduce technical risk, and identify potential problems.
+25 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Digital Twin: This level incorporates information about the performance, maintenance, and condition
+of physical assets. This information is used by the virtual system model to support high-level decisionmaking in asset design and development as well as maintenance planning. At this level, data
+transmission is two-way.
+Adaptive Digital Twin: Level three uses supervised machine learning to take into consideration the
+priorities and preferences of human operators and provides a configurable user interface for dealing with
+the physical and digital twins. With the aid of this DT, real-time planning and decision-making during
+operations is possible.
+Intelligent Digital Twin: Level four adds unsupervised machine learning capabilities in addition to the
+features from level three. A system's analysis can be carried out more precisely and successfully by
+integrating it with reinforcement learning, which may help uncover patterns in the operational
+environment.
+2.5.4 Comparison of BIM and Digital Twin
+Data generated during the planning and design phases are incorporated into the BIM process. The asset's
+development and operation are also covered by the digital twin, which can potentially help with future
+project planning and design. Multidisciplinary models in the core, together with the integration of
+systems and data across processes and between organizations, are necessary to fully realize the potential
+of the digital twin. The quickest way to create a precise, valuable digital twin is through BIM.
+BIM platforms were developed in response to the need for effective IT tools for design, and the processes
+have evolved to fulfill the need for digital prototyping in construction, allowing testing of both design
+and production aspects before construction (Feng, Haibo et al., 2021; Sacks et al., 2020). Many
+practitioners see BIM as the core technology enabling the construction of digital twins (Sacks et al.,
+2020), Though so-called "as-built" BIM or "Facility Management" (FM-BIM) models (Teicholz, 2013)
+include details about the status of facilities when they are put into service, they fall short of the digital
+twin concept of continuously updating the representation of a facility's current state. The goal of "asbuilt" models, also known as the "asset information model (AIM)" in ISO 19650, is to give owners
+models for the operation and maintenance phase. These models are typically reactively compiled after
+execution. They are not intended to provide the short cycle time feedback needed for project control
+(Sacks et al., 2020). To show the actual reflection of the physical assets at any given time as in line with
+the digital twin modeling concepts, the BIMs need to be continuously updated using the information
+collected from the sensors or ubiquitous IoT devices. However, there has been a lack of efforts to connect
+BIMs to digital twin models (Feng, Haibo et al., 2021).
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 26
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Furthermore, the BIM-compatible predictive simulation and analysis tools are intended for use in design
+rather than project execution. Predictions of the future performance of the built product are made using
+applications for structural engineering, ventilation and thermal performance, lighting, and acoustics.
+When performing "4D CAD" analysis of project schedules using BIM models, critical path approach
+tools are employed, although these are not appropriate for production control (Sacks et al., 2020).
+Although BIM systems offer excellent representations of product designs, they lack the necessary
+elements for construction utilizing digital twins. (Sacks et al., 2020)
+Figure 18. Comparasion of BIM & DT (Davila Delgado and Oyedele, 2021)
+However, according to (Quaye, G.M, 2021), BIM is one of the foundational processes on which
+digitization in the AEC sector is made possible and scalable, The digital twin is regarded as a concept
+rather than a technology and it relies on many enabling technologies to generate a value. A BIM model
+is a 3D model with abundant semantic data that acts as a database for all assets and streamlines and
+standardizes information flows between stakeholders during the delivery phase. BIM model and Cobie
+data act as a repository of asset data during the operation and maintenance phase (Lu, et al., 2020).
+However, BIM application in the O&M phase is still at an early stage and requires significant
+development for integrations. Currently, the Cobie data format is the only means to integrate BIM in the
+O&M phase. According to research findings, there are many limitations associated with the lack of BIM
+application and integration in the O&M phase, some of the notable issues are summarised under
+organizational - the lack of awareness of BIM use in the O&M phase; technological – lack of monitoring
+integration of BIM-IoT's; the informational-the legacy format of BIM not supporting the integration of
+BIM with IoT's technologies. However, with the adoption of BIM level 3 in the future, most of the
+integration issues faced can be eliminated.
+27 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 19. BIM maturity wedge (Quaye, G.M, 2021)
+Recognizing the limitation of BIM in the integration of the O&M process, CDBB proposes DT concepts
+to overcome the integration issue with BIM models. DT supports the integration and interfacing of BIM
+data with the services delivery processes, in a secure information landscape. DT provides flexibility in
+information integrations and modeling with analytical capabilities which are not possible with the BIM
+process. Further, DT adoption can also enable prescriptive and predictive maintenance during the O&M
+phase. The broad relationship between BIM and DT is illustrated below by (Bart Brink, 2020)
+Figure 20. Relationship b/w BIM & digital twin (Quaye, G.M, 2021)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 28
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+3 LITERATURE REVIEW – STATE OF ART
+The definitions of digital twin are specific to the industry domain, Fundamentally, "A digital twin can
+be defined, as an evolving digital profile of the historical and current behavior of a physical object or
+process that helps optimize business performance" (Deloitte, 2020). The application of intelligent
+operation and maintenance strategies, that utilize enabling technologies such as BIM, IoT, ML, and AI
+capabilities, offers huge benefits to the AEC industry. Many research findings have illustrated the
+application & benefits gained from the implementation of DT process during the O&M phases,
+However, many challenges are encountered while implementing the digital twin concepts during the
+O&M phase. According to a study conducted by Delloite, the most critical knowledge required for
+implementing a digital twin process is determining the appropriate level of detail in a DT model. Both
+complex and simple DT models will not yield their true value and incur significant costs to the asset
+owner. This chapter performs the literature analysis on the state of the art of the Digital Twin concept
+and identifies practical applications in the real world, particularly during the O&M phase. The following
+research questions are formulated to find the appropriate solution to create the right level of DT for the
+O&M phase.
+Figure 21. Key questions of the literature review (Own works)
+After identifying the relevant papers and articles from various sources available online, the systematic
+process of literature review entails a review of the application of DT in the O&M phase, a review DT
+model, and the solution used, information requirements, technology selected, and the frameworks
+proposed for the practical application. The review was performed following the PRISMA framework
+29 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+utilizing the University of Ljubljana digital library database and Google scholar database. The keywords
+are combined with Asterix OR X OR, AND, digital twin enabled Asset management/Facility
+management, Digital twin in operation and maintenance, Digital twins in AEC sectors, BIM enabled
+digital twin, Smart Asset management Building Operation and Digital Twins. The total resources
+identified in the Zotero database were 67 including a research paper, conference paper, books, and
+reports. With further screening, 10 final papers were considered for in-depth qualitative analysis.
+Figure 22.Paper selection process (Own works)
+3.1 Literature Analysis
+Following the rigorous process of screening the relevant papers, and reading through the selected
+articles, the papers are summarised based on the thematic area of applications, DT model adopted, tools
+& technologies used, and value generated from its applications. The findings from this literature
+analysis is is used as a knowledge base for answering the research question formulated.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 30
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Table 3.Ten papers were identified based on the thematic area of applications
+Authors Digital twin Descriptions Applications phase
+(Peng et al.,
+2020)
+"Digital Twin Hospital Buildings: An Exemplary Case Study
+through Continuous Lifecycle Integration"
+O&M
+(Zhao et al.,
+2022)
+"Developing the conceptual framework for the application of
+digital twin technologies to revamp building O&M process"
+O&M
+(Lu, Parlikad,
+et al., 2020)
+"Developing a Digital twin at Building and city level - A
+case study of West Cambridge Campus".
+O&M
+(Lu et al.,
+2021)
+"Moving from building information models to digital twins
+for the O&M phase".
+O&M
+(Lu, Xie, et
+al., 2020)
+"Digital twin-enabled anomaly detection for built asset
+monitoring in operation and maintenance"
+O&M
+(Coupry et
+al., 2021)
+"BIM-Based Digital Twin and XR Devices to Improve
+Maintenance Procedures in Smart Buildings"
+Smart Asset
+Management
+(Papic and
+Cerovsek,
+2019)
+"Digital twins advancing smart infrastructure asset
+management"
+Smart Asset
+Management
+(Lu et al.,
+2020a)
+"From BIM Towards Digital Twin: Strategy and Future
+Development for Smart Asset Management"
+Smart Asset
+Management
+(Heaton and
+Parlikad,
+2020)
+"Asset information model to support the adoption of digital
+twin"
+Smart Asset
+Management
+(Qiuchen Lu
+et al., 2019)
+"Developing a dynamic digital twin at a building level:
+using Cambridge campus as a case study"
+DT Modelling –
+Building Level
+31 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Table 4. Enabling technologies adopted for DT in O&M
+Authors Digital twin Descriptions Enabling technologies
+(Peng et al.,
+2020)
+"Digital Twin Hospital Buildings: An Exemplary
+Case Study through Continuous Lifecycle
+Integration"
+Big Data Analytics, Cloud
+Storage, Continuous Life
+Cycle Integration, ETL,
+Mixed Reality, 3D Point
+Cloud, and 3D BIM
+(Zhao et al.,
+2022)
+"Developing the conceptual framework for the
+application of digital twin technologies to revamp
+building operation and maintenance process"
+PLC, Wireless LAN, NX
+Modelling, Line Designer,
+PLM, O-IM Web server, ODF
+(Lu, Parlikad,
+et al., 2020)
+"Developing a Digital twin at Building and city level
+- Case study of West Cambridge Campus"
+RFID, QR code, Wifi, WPWAN, CIM, AI, ML, IoT
+(Lu et al.,
+2021)
+"Moving from building information models to digital
+twins for operation and maintenance"
+As-is BIM model, WSN
+enabled IoT, RFID, Cloud
+Computing, ETL, Autodesk
+Forge API, AWS
+DynamoDB, web-based
+program (.Net) using C#
+and JavaScript
+(Lu, Xie, et
+al., 2020)
+"Digital twin-enabled anomaly detection for built
+asset monitoring in operation and maintenance"
+AMS, BMS, GUID, BAS,
+Cobie, IFC,
+(Coupry et
+al., 2021)
+"BIM-Based Digital Twin and XR Devices to
+Improve Maintenance Procedures in Smart
+Buildings"
+GPS, XR devices, CDE,
+HMD,AR, VR
+(Papic and
+Cerovsek,
+2019)
+"Digital twins advancing smart infrastructure asset
+management"
+CMM, ISO 55000, Digital
+Built Environment Maturity
+Model (dbEMM)
+(Lu et al.,
+2020a)
+"From BIM Towards Digital Twin: Strategy and
+Future Development for Smart Asset Management"
+3D BIM (extended IFC
+format), WSN enabled IoT,
+BMS, AMS, SMS, Cloud
+computing (AWS), ETL
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 32
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+(Heaton and
+Parlikad,
+2020)
+"Asset information model to support the adoption of
+digital twin"
+A relational database, AIM
+categorization systems ETL,
+point cloud to BIM, and 3D
+BIM (REVIT-IFC)
+(Qiuchen Lu
+et al., 2019)
+"Developing a dynamic digital twin at a building
+level: using Cambridge campus as a case study"
+RFID, QR codes, imagebased techniques, 5G, LPWAN, BIM, AI, machine
+learning modules, IoT.
+Table 6. Value/Benefits of DT Implementation
+Authors Value Generations
+(Peng et al., 2020) The capacity to get prompt facility diagnoses and operation
+recommendations that are automatically delivered back from the digital
+building to reality has been developed, as can understand the precise status
+of the entire hospital by visual management.
+(Zhao et al., 2022) Create a conceptual framework to aid in the broader use of DT technologies
+and assist FM during the building's O&M phase.
+(Lu, Parlikad, et al.,
+2020)
+The proposed DT architecture facilitates the integration of diverse data
+sources, facilitates efficient data querying and analysis, facilitates decisionmaking in O&M management, and further reduces the distance between
+people and buildings/cities.
+(Lu et al., 2021) It encourages the wider use of DT-enabled asset management during the
+operation and maintenance phase. It also stimulates new research ideas.
+(Lu, Xie, et al., 2020) The results show and prove that the novel DT-based anomaly detection
+process flow realizes a continuous anomaly detection of pumps, which
+contributes to effective and automated asset monitoring in operations and
+maintenance (O&M) using the centrifugal pumps in the heating, ventilation,
+and air-cooling (HVAC) system as a case study.
+(Coupry et al., 2021) Demonstrate how a DT may be created using a BIM and how using a DT in
+conjunction with XR technology can enhance maintenance procedures in a
+smart building.
+(Papic and Cerovsek,
+2019)
+These paper targets methods, processes, and technologies that may be used
+to better capture, organize, analyze and understand the status and behavior
+of infrastructure assets. The presented smart asset management maturity
+model will enable asset owners to introduce new methods of monitoring and
+33 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+decision-making that may lead to innovative smart infrastructure asset
+management.
+(Lu et al., 2020a) It encourages the widespread use of smart DT-enabled asset management
+during the O&M phase and contributes to the generation of new research
+ideas.
+(Heaton and Parlikad,
+2020)
+exemplifies how many models can be federated into a single, larger-scale
+model to allow a single point of access to data from various models of
+different assets.
+(Qiuchen Lu et al., 2019) Developing a dynamic digital twin at a building level: using Cambridge
+campus as a case study
+3.2 Review of DT Application and Solution used - O&M phase
+Review Article 1 - Digital Twin Hospital Buildings: An Exemplary Case Study through
+Continuous Lifecycle Integration - (Peng et al., 2020)
+Hospital overview screen; A large display screen showing the overview of the hospital operation and
+maintenance system is set up in the control room which provides the overall visualization of the critical
+information required for daily checking by the facility manager.
+Space management; The spatial information of rooms and corridors was created for effective hospital
+space planning, supporting room allocation, statistical analysis, and other tasks in the 3D view and list
+view. This gives each medical department's use rate as well as the proper positioning for the maintenance
+staff, and the effectiveness of space use was evaluated in light of how the hospital operates (Peng et al.,
+2020).
+Energy management; For monitoring energy consumption such as water and electricity, consumptions
+are segregated to based on usage for different purposes and locations Both the total energy consumption
+and individual consumptions (by category) are displayed in the graphic platform with color-coding
+(Peng et al., 2020).
+Facility management; There were displays representing each system's physical structure, logical
+organization, and key facility information. The operating status and alarm status of each device are
+shown in the 3D model view during rough seamless docking with BA. The technology allows the
+backstage management staff to easily understand the operation of all important machinery and assess
+their performance by displaying the historical monitoring data of each monitoring point as a list and
+trend chart (Peng et al., 2020).
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 34
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Repair and maintenance subsystem; This serves as the DT system's service windows, enabling users of
+any level to easily initiate and handle repair requests or maintenance schedules. This subsystem's DT
+service consists of work order generation, processing, job assignment, emergency repair initiating, and
+maintenance calendar. Through fault diagnosis modules, maintenance actions can be carried out
+according to the real circumstance triggered by a human or automatic system. The DT module helps
+with accurate fault location, which boosts the effectiveness of equipment maintenance and emergency
+repairs (Peng et al., 2020).
+Security subsystem; By connecting with the hospital's video monitoring platform, the platform was able
+to combine all security cameras. The DT control center would immediately alert security guards on
+relevant floors as soon as medical dispute staff entered the field of any security cameras using the
+security subsystem, which would also trigger facial recognition warnings based on their photo profiles
+(Peng et al., 2020).
+Guest flow management; a real-time guest flow can be tracked based on a facial recognization camera
+mounted on each entrance. The system calculates the guest flow rate at the set time using ETL
+processing. As soon as it exceeds the threshold limit set, the warning is initiated informing the security
+personnel on duty. Vehicle flow can also be traced based on numberplates to determine car flow rates
+(Peng et al., 2020).
+Abnormal electric usage detection; The k-means cluster method was used to automatically classify the
+data from smart meters, which showed that the amount of electricity consumed in hospitals varies
+depending on location. To check the unidentified consumption pattern, this process is entirely automated
+and unsupervised. Data based on at least seven different types of typical consumption are collected, and
+corresponding smart meters are recognized. The DT system continuously monitored the power usage
+and identified any anomalous meters that exceeded or fell below the 20% threshold from corresponding
+normal behavior. On a huge screen, abnormal circuits were displayed, and a mobile app invited users to
+perform check activities for the rapid maintenance of damaged lines and circuits (Peng et al., 2020).
+Air-handling unit fault prediction; Faults are located using information from repair records and the
+monitoring system, which uses data collected over 24 hours. Long-Term and Short-Term Memory
+(LSTM) networks were used to learn prediction rules from time-series data because they have a flexible
+memory and can follow anomalous data changes over time. the LSTM prediction model encompassed
+10 different types of failures, including overheating and undercooling, low airflow, blocked filters, and
+others. The data warehouse, on the other hand, is constantly updated with the most recent 24-hour
+monitoring data for all AHUs. An early warning would be given in the system and mobile app if the
+anticipated failure probability was more than 0.6 (Peng et al., 2020).
+35 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Frequent repair pattern recognition; The method allows for the automated analysis of all repair and
+maintenance records to identify the pattern of performed fixes and identify the underlying causes of
+recurrent failure. The system automatically groups comparable repairs into repair patterns, which were
+appended to the monthly report. The extracted information included repair floor, department, room, and
+type of damage. Optimization decisions would be made by managers when they discovered significant
+trends (Peng et al., 2020).
+Low-quality maintenance checking; The DT system makes it possible to keep track of each piece of
+equipment's maintenance history as well as the identities of the contractors who perform that
+maintenance by utilizing the t-test hypothesis testing technique. If the mean value of the repair amount
+sequence following maintenance was higher than it was before maintenance and statistically significant,
+the quality was deemed low (Peng et al., 2020).
+Review Article 2 - Digital twin-enabled anomaly detection for built asset monitoring in operation
+and maintenance - (Xie et al., 2020)
+A case study at the University of Cambridge's West Cambridge campus to demonstrate how the
+designed data structure can support the data integration of dynamic DT buildings and anomaly detection
+function. The study showed that the DT platform gives facility managers and other associated
+stakeholders access to asset monitoring services by analyzing existing anomaly detection modules, and
+professional expertise and by establishing interaction between the real and digital worlds. The DT
+system's primary objective is to provide FM personnel with intuitive information, visualization, and
+decision support, by using the IFC schema and intelligently analyzing these data in a systematic
+manner. The embedded DT instance implements the intelligent extraction of pump-relevant data and
+sets off the alarm when the anomaly detection technique detects any potential aberrant behavior for the
+investigated pump. With the capacity to store and analyze BIM object-related data gathered via
+heterogeneous data sources, the embedded DT instance may store and analyze data related to BIM
+objects (Xie et al., 2020).
+During the O&M phase, it is discovered that an anomaly detection system is required to identify
+abnormal pump behavior before it causes any catastrophic consequences as a result of its failure. Since
+it takes a lot of experience to manually identify anomalies, DT platforms fully equipped with machine
+learning and artificial intelligence ought to be able to distinguish between various patterns obscured in
+operational data (Xie et al., 2020).
+Review Article 3 - Developing a Digital Twin at Building and City Levels: Case Study of West
+Cambridge Campus- (Lu, et al., 2020)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 36
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+The author proposes a dynamic digital replica of a city level with DT sub-systems (building, bridges,
+transportation, etc). This DT architecture links diverse assets and data sources with their applications,
+facilitating intelligent asset management, delivering efficient O&M management, and further bridging
+the gap between human relationships with buildings and cities through more intelligent, transparent, and
+sustainable means (Lu et al., 2020).
+The idea of a DT-enabled smart city was proposed in recognition of the important role that citizens play
+in urban and city development. This smart city will involve residents and acquire vital feedback on
+important urban planning and policy through the internet network. (White, et al., 2021)
+Review Article 4 - BIM-Based Digital Twin and XR devices to improve maintenance Procedures
+in Smart Buildings- (Coupry et al., 2021)
+BIM-enabled asset management lacks predictive capabilities, Therefore, BIM-based DT uses “Extended
+Reality”.(XR) devices can improve maintenance operations in a smart building. The applications of
+BIM-DT -XR for maintenance improvement are explained below;
+XR device helps to locate or identify specific equipment at the site during maintenance procedures based
+on data of equipment from a centralized DT or a BIM to identify its location. Devices such as Hololens
+headsets combined with detection algorithms to facilitate the localization and identification of
+malfunctioning elements even if the maintenance equipment is hidden or concealed. It can also be used
+to display specific documentation, such as a 3D representation of an ultrasound inspection. Further
+through the use of documentation or maintenance instructions, such as equipment documentation or
+maintenance instructions. Through the use of specific filters, only needed information can be displayed
+preventing the overflow of too much information to the operator. The use of AR or MR argumentation
+helps to display specific information over or near the equipment and can help the operator to better
+identify faulty equipment (Coupry et al., 2021).
+Centralization of data made possible by DT enables all stakeholders to access the operation data and
+analyze the data which can be eventually used for predictive inspection purposes. Sometimes if the
+operator requires assistance (information related) during certain maintenance tasks due to complex
+procedures involved, Collaboration then becomes synchronous as it is carried out in parallel with
+maintenance operations. With the use of video calls and augmented virtual annotations, communication
+between operator and remote expert can also be established creating a real-time augmentation. After the
+maintenance procedures, inspection and maintenance reports can also be shared among the stakeholders
+(Coupry et al., 2021).
+37 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+3.3 Review of Enabling Technologies Deployed For O&M phase
+This chapter examines some of the top important technologies that were deployed in the creation of the
+DT from among the selected research papers. This review also contributes to the knowledge base for
+DT creation in the O&M phase.
+3.3.1 BIM (Building Information Modelling)
+BIM process not only enables digital representation of the building and civil infrastructure but also
+allows the exchange of Building information effectively among the stakeholders following the unified
+digital norms. BIM has considered a central repository or database for information exchanged during
+the design and construction phase of the building and infrastructures (Lu et al., 2021). However, BIM
+usage in the operational phase has been found limited due to its inability to integrate the dynamic and
+real-time data from the heterogeneous source. Currently, BIM level 2 use in asset management operation
+and maintenance phase is at the infancy stage. The existing level of BIM supports the exchange of asset
+information using the Construction Operations Building Information Exchange (Cobie) spreadsheet.
+The future evolution of BIM into level 3 has the potential to integrate asset information more
+dynamically. However, BIM at the current level still serves as the lowest common denominator for
+building DT due to its ability to host static asset data, accurate representation, communication, and
+monitoring, and easy retrieval of information about buildings and infrastructure. Apart from exchanges
+of asset data using the Cobie format for the operational and maintenance phase, BIM also provides the
+3D model for visualization of an asset in real-time when integrated with DT architecture. According to
+(Quaye, G.M, 2021), BIM limitations in the DT process manifest in technology-related challenges,
+information-related challenges, organizational challenges, and standard-related challenges.
+One of the effective methods to create a digital twin in the operation and maintenance phase is
+demonstrated by (Lu et al., 2020b) using the IFC schema from the BIM model. Industry foundation class
+(IFC) supports interoperability of BIM models with other systems using the open BIM concepts due to
+its flexibility and consistency of the IFC schema in the building lifecycle as one of the primary BIM
+enabling capabilities. However, the limitation of the IFC schema for operation and maintenance activity
+poses a problem to utilize the BIM with many O&M systems. Therefore, extensions to the current IFC
+schema to support the O&M activities are required. This IFC schema designed for operation and
+maintenance task were integrated by linking the BIM object's unique identifier (GUID) with other
+relevant data sources such as CMMS or AMS (Quaye, G.M, 2021).
+(Heaton & Parlikad, 2020) propose developing an Asset Information Model (AIM) from IFC BIM
+models (Architect, structural, MEP), an external database that collect and host data from other sources.
+For the AIM integration, a functional-based classification system (UNIClass) is used for the
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 38
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+decomposition of an asset from the project level to the component level. AIM relational database pulls
+data from BIM models and external data sources. Finally, AIM federated model is integrated and linked
+to the IFC BIM models, relational database, and point cloud data to form the digital twin platform.
+Most of the buildings in Europe are constructed are before the 1970s when BIM models of the building
+did not exist. Therefore, for those buildings and infrastructure without BIM models, advanced
+technologies such as aerial photography, laser scanners, and photogrammetry techniques are used to
+capture the 3D building models using the Point cloud generated by advanced surveying equipment.
+These point cloud data are stitched to form the As-is BIM model (Peng et al., 2020).
+3.3.2 Internet of Things (IOTs) and Sensors Technologies
+The current practice of facility management in the O&M phase uses the BMS system such as BAS &
+CMMS system. These are proprietary software building management systems pre-programmed where
+the settings of sensors and alarms are preset on maximum and minimum threshold parameters. BMS
+systems are not designed for integrations of real-time operational data coming from multiple sources.
+This limit the capability of such a system to perform intelligent maintenance functions such as fault
+detections, and predictive & prescriptive maintenance (Lu et al., 2020b). However, with advancement
+in technologies like the internet of things (IoT), Wireless enabled sensors supports the collection and
+transmission of data from various sources. WSN allows data acquisition from distributed sensor
+networks through gateways and HTTP for monitoring and capturing the status of the physical
+environment and individual equipment within the system. Common usage of sensors in the operational
+phase of building includes monitoring and recording of the following parameters; indoor & outdoor
+temperature, relative humidity of the air, and equipment statuses such as speed, vibrations,
+temperatures, and pressure. (Lu et al., 2021) deployed following WSN abilities; to collect & upload data
+from diverse locations; can support a large number of assets allowing scalability and flexibility;
+affordable and readily available; perform analysis and control of resources and assets (Hallaji et al.,
+2022).
+3.3.3 Big Data & Cloud Computing
+One of the biggest challenges of adopting Digital twin in operation and maintenance stages is the huge
+volume of data (real-time data from sensors & user feed data by humans) coming from multiple sources
+(Peng, et al., 2020). Therefore, to handle the significant volume of data, big data services powered by
+open-source engines such as Amazon web service (AWS), Google Cloud, Microsoft Azure, Kafka, and
+Flink are necessary. DT process requires the continuous transmission and integration of sensor data from
+heterogeneous sources with a significant volume of both static and dynamic data flow. The big data
+39 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+analytics created at the backend consistently present high-density data streams due to their processing
+power to adapt quick-flowing data streams from multiple sensors (Lu, et al., 2019). Further, to increase
+performance, DT architecture should also incorporate big data and cloud computing.
+3.3.4 Artificial Intelligence & Machine Learning Algorithms
+Machine learning algorithms such as k-cluster are used for the detection of abnormal electric usage, Air
+handling unit defects can be predicted using long-term and short-term memory (LSTM), and opensource methods can be used to identify repair patterns that are repeated frequently. La Russa and
+Santagati (2020) used artificial data sets and multivariate linear regression-linked machine learning
+algorithms to create a Decision Support System (DSS). Unsupervised machine learning algorithms
+(statistical approaches) including Moving Average (MA), Cumulative Sum (CUSUM), and Binary
+Segmentation-based Change Point Identification Techniques were used to detect anomalies in
+environmental data. (Xie, et al., 2020). The higher maturity level of DT requires the capabilities of AI
+and ML to perform an intelligent predictive and prescriptive maintenance task.
+3.4 Review of DT framework proposed for O&M stage
+The findings from the literature review indicated, ''Digital Twin is a concept rather than technology''.
+Although the fundamental principles of using the DT concepts are the same throughout the industries
+irrespective of domains (aeronautical, manufacturing, and AEC sectors). The applications and
+architecture layers of DT are slightly different in the industry. The process design (framework) of DT
+concepts is significantly matured in most of the industries in contrast to the AEC industry. The
+manufacturing industry has already developed standards and guidelines for building DT.
+Figure 23. DT functions requirements for O&M (Own works)
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 40
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Digital twin application in AEC industries is at the evolving stage and therefore the knowledge area is
+still at an early stage. Currently, there are no standards or guidelines to build DT in the AEC industry.
+Based on the stages of DT implementations, the information requirements and framework are developed
+in accordance with its purpose. In the O&M stage, although the DT architecture largely remains similar,
+many authors have proposed different methods of building DT architecture/frameworks based on their
+purpose. The application of DT in the O&M phase requires the integration of various enabling
+technologies such as IoT, BIM, VR, AR, big data, cloud computing, artificial intelligence, machine
+learning algorithms, etc. This section reviews the different frameworks proposed from the selected
+papers and synthesis the knowledge to build a foundation for implementing the DT in the O&M phase
+of building assets. The DT in the O&M phase should include the minimum basic aspects shown in figure
+25.
+The DT frameworks proposed for O&M of building asset systems are reviewed and analyzed;
+DT Framework 1
+This study analyzes present limitations and knowledge gaps in creating a dynamic DT at the building
+level from data management perspectives. Based on a case study conducted at the west Cambridge site.
+DT framework for developing dynamic DTs at building levels for the O&M phase is proposed. The DT
+architecture integrates heterogeneous data sources, with a data modeling layer to support intelligent data
+queries, and provides smarter decision-making processes. The framework proposed is based on five
+perspective system architectures shown below;
+Figure 24. Dynamic DT framework for O&M of Building (Qiuchen Lu et al., 2019)
+41 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+DT Framework 2
+This framework proposes DT-enabled asset management in the O&M phase. The BIM limitations from
+the perspectives of both information richness and analytical capability in delivering efficient asset
+management were the primary motivation for developing this framework. The proposed framework uses
+smart asset management fundamentals and integrates DT technologies such as artificial intelligence,
+machine learning, and data analytics to create dynamic digital models that can learn and update the
+status of the physical counterpart from multiple information sources (Lu et al., 2021). The proposed
+hierarchical based architecture of the DT-enabled asset management framework for O&M is illustrated
+below;
+Figure 25. DT-enabled asset management framework (Lu et al., 2021)
+DT Framework 3
+This DT framework is the outcome of research titled ''Digital twin-enabled anomaly detection for built
+asset monitoring in operation and maintenance'' (Xie et al., 2020). The scope of this research is confined
+only to the component level for anomaly detections of a pump. This DT framework uses extended
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 42
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+industry foundation classes (IFC) schema to integrate the operational and maintenance process for the
+building assets. The DT architectural layer for this framework remains same as framework 2.
+Figure 26. DT for anomaly detection of pump (Xie et al., 2020)
+DT Framework – 4
+(Zhao et al., 2022), proposed bottom-up approach for ''Developing a conceptual framework for the
+application of digital twin technologies to revamp building operation and maintenance processes''. The
+goal of this study is to promote the wider adoption of DT integration in the O&M phase by removing
+the constraints caused by the misalignment of the data integration and data standards. It offers facility
+management a bottom-up approach to DT implementation, covering the prerequisites, data collection
+from multiple sources, processing, transmission, and modeling, model integration layer with different
+intelligence tools, application, and data presentation layer.
+43 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 27. Conceptual Bottom-up DT framework (Zhao et al., 2022)
+DT Framework – 5
+(Quaye, G.M, 2021) proposed a DT framework for O&M of building systems based on the state-of-theart research and expert consultations from the industry. The objective of the DT framework proposed is
+to improve the productivity of building lifecycle costs through optimizing the operation and maintenance
+activity. The DT architecture layers comprise five layers, data acquisition, data transmission, data
+integration & modeling, and prediction and automation layers.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 44
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 28.General DT framework for O&M phase (Quaye, G.M, 2021)
+Table 5. Qualitative analysis of DT framework
+45 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Since the DT is a concept rather than a technology, There is no standard process to develop the DT for
+every instance. DT architecture in the O&M phase depends on the objectives of its applications.
+Additionally, there are no standard guidelines available to evaluate the DT framework qualitatively or
+quantitatively. Nevertheless, there are many similarities and best practices in terms of DT architecture
+proposed for different application areas for the O&M phase. The components required for creating DT
+in the O&M stage at the building level are summarized below;
+Table 6.. Summary of DT components for O&M phase (Own work)
+Architecture layer Descriptions of requirements Technologies deployed
+Data Acquisition Layer Collect data from the distributed
+physical assets and the external
+environment.
+Data acquired are geometric
+information, environmental
+conditions, scheduling, and
+functional parameters
+Data types Building management
+data, real-time sensor data, asset
+management data, Tag (QR codes),
+and IoT devices
+IoT-enabled wireless sensor
+network (WSN) for data
+collection from distributed
+assets.
+Scan-to-BIM technology,
+photogrammetry, laser
+scanners, aerial drone
+photography, or point cloud.
+My Structured Query
+Language (MySQL)
+Transmission & Integration
+Layer
+Transmit data from the physical
+asset to the digital counterpart and
+vice versa.
+Transmission technologies
+widely used are WiFi, NFC,
+Bluetooth, 4G, WAN etc.
+Google Cloud, Amazon Web
+Services (AWS), and
+Microsoft Azure for
+transforming, processing, and
+storing data. Extract
+Transformation Load (ETL)
+technologies are used
+Data Integration, Data
+Modelling & Visualization
+Layer
+Kernel of DT architecture - This
+layer performs data and model
+integration and processing functions
+etc.
+IFC, Forge (API), web-based
+program, Python, C#, and
+Java Script.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 46
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+This layer defines the digital
+replicas by integrating BIM, GIS,
+IoT sensors, asset management
+systems, weather data systems, cost,
+scheduling, and safety management
+platforms.
+Visualization is performed
+through AR/VR technologies.
+Prediction & automation
+Layer
+In this layer information is
+generated by interpreting data,
+information is processed to create
+knowledge, and knowledge
+obtained ultimately supports
+decisions and actions.
+Machine learning (ML) and
+artificial intelligence (AI).
+Long-Term and Short-Term
+Memory network algorithm.
+47 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+4 METHODOLOGY FOR DEVELOPMENT OF DIGITAL TWIN FRAMEWORKS
+This chapter deals with answering the key research question ''Practical application of a framework for
+Digital Twins for O&M phases. To explain the steps and procedures involved in the development of
+the DT framework for the O&M phase of assets in the building project, The framework development
+process undertaken is illustrated in figure 31.
+Figure 29. Development process of DT framework (Own works)
+4.1 Background Review
+The main research objective of this thesis is to propose the framework for the practical application of
+DT in O&M of building assets. Currently, the AEC sectors do not have unified standards, processes,
+and guidance documents for building DT for the O&M phase. BIM has proven its benefits in the building
+design and construction phase, However, BIM usage in the O&M phase has been limited due to its
+legacy format. The DT concepts and technologies available from industry 4.0 has enabled many AEC
+practitioners to harness the potential of the digital twin in the asset O&M areas. With the advancement
+of the digital revolution, the conventional ways of managing asset in the AEC industry has undergone
+radical improvement. However, owing to a lack of standard and guidance documents for building DT
+solutions in the AEC industry and also due to a lack of a unified process to implement the DT process.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 48
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+The DT adoption rate within the AEC sectors for the O&M phase remains sluggish. Therefore to
+accelerate the adoption of DT in managing building assets during the O&M phase, the right level of DT
+architecture, a clear process of information requirements, and DT deployment are necessary. This
+chapter proposes the right level of DT framework for managing building assets during the O&M phase.
+The first task initiated for the development process of this framework is an exhaustive literature review
+which is already covered in the previous chapters. All the relevant DT concepts and architecture related
+to the O&M of building service are also reviewed and analyzed.
+4.2 Development of DT Requirements - O&M Phase
+Figure 30. Development of DT information requirements process (Own work)
+4.2.1 Smart asset management strategy
+''Asset management refers to the coordinated effort made by an organization to generate value from the
+asset'' (ISO 550001). According to IMM (Institute of asset management), a "SAMP is a planning tool to
+clarify intentions, priorities, and practices to be adopted". It takes a long-term view and considers the
+combination of organization needs, stakeholder expectations, and the conditions of existing assets and
+asset management capabilities”. Smart asset management refers to the ability to readily provide
+information about the asset, provide up-to-date asset performance and historical information, and
+generate knowledge based on advanced data analytics and decision-making.
+The ultimate objective of asset management is to achieve the optimization of service, cost, and risk
+throughout the asset lifecycle. Research findings show that the O&M phase of any asset covers the
+majority of its lifespan and therefore accountable as a significant cost factor. The changing
+demographics and climate change have further aggravated the pressure on the built environment to
+improve the ways asset is managed. The environmental, social, and economic outcomes are changing at
+a rapid pace correspondingly. This has driven the world to rethink the current asset management process
+Step - I
+•Define
+PurposeSmart asset
+management
+strategy
+Step-II
+•Develop the
+asset
+Information
+model
+Step-III
+• Develop O&
+M information
+requirements
+Step_IV
+•Prepare BIM
+Level of
+information
+need and LOD
+49 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+and make it more productive to adjust to the changing requirements. Effective asset management plays
+a significant role in delivering the functionality and serviceability of buildings.
+Figure 31. Strategic asset life cycle decision support system (IAM, 2022)
+Therefore, it requires a coordinated shift in terms of cultural and technological paradigms to adjust to
+the changing requirements of the asset. Currently, there is a lack of holistic approaches and strategies to
+manage the asset and its associated information that can help to monitor, detect, record, and
+communicate operation and maintenance (O&M) issues. The digitalization of assets will enable better
+decision-making and asset value management (better design, selection, and delivery of new assets)
+through the usage of asset data such as behavior, and performance data (Papic and Cerovsek, 2019).
+Therefore, structured asset data is seen as the single most important parameter to achieving smart asset
+management. This data-driven asset management can transform from the current practice of siloed asset
+management to smart and connected asset management through the implementation of digital twin
+concepts and technologies.
+(Papic and Cerovsek, 2019), proposed the ‘Smart Asset Management Maturity’ (SAMM) based on asset
+management requirements from various sources like the Institute of Asset Management (IAM) UK
+(2016), ISO 5500X series, the good practice developed by GFMAM (Global Forum on Maintenance
+and Asset Management), etc. Smart asset management concepts integrate all three dimensions of the
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 50
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+organizational decision-making process, asset management principles, and technology management.
+SAM enables predictive and prescriptive approaches through real-time data integration. Smart Asset
+Management enables asset management organizations to make better decisions by working with up-todate, true and reliable information using processes enabled by the latest technology. It is concentrated
+in various ways. The more efficiently information about assets is integrated, the more value you can
+derive from those assets (Papic and Cerovsek, 2019).
+Figure 32. DT Incremental maturity level (Mêda et al., 2021)
+The strategy of achieving the smart asset is governed by the asset performance requirement against the
+risk and cost. The decision support for choosing the right level of digitization should be based on the
+maturity level of the digital twin required. The corresponding cost associated with digital technologies
+implemented should justify the value gained (Measure objectives fulfillment against cost and risk).
+Therefore, choose the right level of digital twin maturity model before the adoption of DT.
+4.2.2 Develop Asset Information Model
+In the previous section, the significance of data or information is deemed as the lifeblood of the asset to
+create a digital twin in the O&M phase of building. This asset information is produced throughout the
+lifecycle of the asset at various points of time and undergoes continuous updates in real-time or
+periodically based on the level of complexity of the digital twin implemented. The data are produced
+and exchanged among the project stakeholders throughout the lifecycle to produce the asset information
+51 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+model (AIM) for the O&M phase. PAS 1192-3 defines AIM as ''data and information that relates to the
+asset at a level required to support an organization’s asset management system”. This AIM is linked to
+various enterprise systems such as asset management systems, sensor systems, and physical
+environment parameters. Cobie data are derived from the Revit model during the BIM process and
+linked to the building asset management system such as BMS, CMMS & AMS for operation and
+maintenance functions. The process of information flow is illustrated below;
+Figure 33. Asset information modeling process flow (ISO 55000-1, 2014)
+There are many methods to produce the asset information model for the O&M phase depending on the
+building status. For a new building project, the Asset information model requirements are defined in the
+BIM execution plan (BEP) as per the information management process in figure 35. The information
+management within the BIM process is designed to produce, exchange, and collect the asset data in the
+required format, and passed to the downstream users for the fulfillment of the intended purpose. The BS
+EN ISO 19650 UK BIM framework guidance for the delivery phase and operational phase serves as
+guiding documents to produce the as-is asset information model;
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 52
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 34. Information Exchange diagram (ISO 19650)
+The common data environment (CDE) hosts all the structure and unstructured asset data produced during
+the project delivery phase. (The structured data are geometric data, alphanumeric, documentations, and
+unstructured data are images, photographs, and meeting notes). The CDE also hosts the O&M data
+produced and exchanged by various parties during the O&M phase. The CDE acts as a repository or a
+single source of truth for the asset.
+Figure 35. Information exchange process during the operation phase (ISO 19650)
+For those existing assets without the BIM model or asset information model. Technologies such as laser
+scanning and photogrammetry are commonly used for producing the object-oriented model (geometric
+model) using point cloud data in Revit software. The non-geometric information of the assets system is
+53 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+updated based on the level of information needed by its purpose. The O&M data are either collected
+through user feedback or real-time data feed from sensors system integrated with the asset. According
+to (Heaton and Parlikad, 2020). The BIM IFC model quality is checked using the BIM collaboration
+format (BCF) and internal model mappings for the building level and room/space with the asset system
+and components are done using solibri model checker tools. The final approach after producing an asset
+information model requires the following steps to support the DT in the O&M phase (Heaton and
+Parlikad, 2020).
+(1) Classification of assets within a BIM model, based on their functional output.
+(2) Development of an AIM relational database, that is derived from an exported IFC model.
+(3) BIM models linked to a relational database within a single federated model.
+Figure 36. Asset classifications & AIM process for DT (Lu et al., 2021)
+4.2.3 Develop O&M Information Requirements
+One of the key aspects of DT architecture is data interoperability, integration, and data modeling.
+Dynamic DT of building assets in the O&M phase involves multi-domain and multi-layer information
+storage, manipulation, exchange, and interaction (Qiuchen Lu et al., 2019). O&M data stored in building
+information systems requires a significant amount of time to search, query, verify and analyze the
+corresponding facility information from heterogeneous data sources (Qiuchen Lu et al., 2019).
+Construction operation building information exchange data format (Cobie) is one of the common
+information exchange national standards adopted by the AEC industry for the integration of BIM and
+O&M systems. The Cobie allows the data exchange from the BIM model to CMMS, BMS, & AMS for
+the O&M phase. However, the Cobie spreadsheet can only represent partial O&M information and is
+therefore ineffective for creating adequate DT. The limitations are; model validation after the
+information exchange is needed; user-friendly information save and query approaches and formats are
+required; clear classification strategies of assets in O&M phases (e.g., sensors and control points) are
+needed to avoid misunderstanding of various O&M activities (Qiuchen Lu et al., 2019). These issues
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 54
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+with the conventional approach highlight the need for an intelligent and comprehensive platform to
+integrate and efficiently search information, support decision-making, and promote automated and semiautomated procedures.
+The other process to exchange the O&M information is using the industry foundation class (IFC). IFC
+schema is an open data format that supports a wider range of data exchange for interoperability. For
+effective integration of information to achieve smart asset management, a standardized, unified, open
+data schema is necessary for the O&M phase. IFC schema is flexible and the most suitable data schema
+for wider BIM implementation and information integration for the DT process. Therefore, a possible
+and effective solution for representing IFC schema and integrating information is to provide a
+centralized data model linking with distributed data resources in daily O&M management.
+However, the existing IFC data schema for operation and maintenance does not support all the O&M
+events. There are no entities in the existing IFC 4 schema to specifically represent information and
+activities in O&M phases. Therefore, it is a prerequisite to developing missing IFC entities subclass,
+types, and parameters. Specific O&M processes and tasks involved for DT should be provided, and
+maintenance and inspection processes need to be defined. Following are some of the important new IFC
+entities required;
+Table 7. IFC extension for O&M activity (Lu, Xie, Parlikad, et al., 2020)
+55 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Other information required related to O&M activity are cost breakdown information of components and
+spare parts, historical records, maintenance cost, and maintenance activities This information cannot be
+directly linked with the asset information model (AIM) and therefore separately maintained and linked
+through the GUID. However, the IFC requirements can be eliminated using proprietary software such
+as Dalux FM, as this software has already integrated the O&M activity within their system.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 56
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 37. The IFC schema mapping with other data sources (BMS and sensor system) (Lu, Xie, Parlikad,
+et al., 2020)
+4.2.4 BIM Model Requirement
+The AEC industry follows diverse standards to develop information requirements in the absence of a
+common framework. The concepts of (LoD) level of details, (LOD) level of definition, and level of
+information have created more misunderstandings of the information requirements concepts rather than
+providing clarity. Several LOD specifications are published, and practitioners adopt the specification
+that best fits their understanding and established workflows, ideally as simple as possible and also
+flexible enough to precisely capture their information needs (Abualdenien and Borrmann, 2022).
+Therefore, to dispel the confusion created, the UK BIM framework has published the ISO 19650 – Part
+D specifically for developing the information requirements through the level of information need
+'RUML77KHRUHWLFDODSSOLFDWLRQIUDPHZRUNIRU'7IRURSHUDWLRQDQGPDLQWHQDQFHSKDVH
+0DVWHU7KHVLV/MXEOMDQD8/)**6HFRQGF\FOH0DVWHUVWXG\3URJUDPPH%XLOGLQJ,QIRUPDWLRQ0RGHOOLQJ±%,0$
+JXLGDQFHXQDEEUHYLDWHG7KLVOHYHORILQIRUPDWLRQQHHGHGLVIXUWKHUFRQVROLGDWHGKROLVWLFDOO\LQ%6
+(1  IRU LPSOHPHQWDWLRQ 7KH LQIRUPDWLRQ UHTXLUHPHQWV IRU WKLV SDUW RI WKH WKHVLV DUH
+GHYHORSHGIROORZLQJWKH,62'DQG%6(1JXLGDQFH
+)LJXUH/HYHORILQIRUPDWLRQQHHGIUDPHZRUN2ZQZRUN
+$FFRUGLQJWRWKH 8. IUDPHZRUN%6(1 ,623DUW'JXLGDQFHGRFXPHQWVWKH IXQGDPHQWDO
+SXUSRVHRIWKHOHYHORILQIRUPDWLRQQHHGIUDPHZRUNLVWRSUHYHQWWKHZDVWDJHRILQIRUPDWLRQDFURVVWKH
+OLIHF\FOHRIDQDVVHW7KHOHYHORILQIRUPDWLRQQHHGHGLVSUHSDUHGEDVHGRQZKDWLQIRUPDWLRQ*HRPHWULF
+1RQJHRPHWULF GRFXPHQWV LV UHTXLUHG E\ ZKR DFWRUV DQG KRZ SURFHVV DQG ZKHQ LW VKRXOG EH
+GHOLYHUHG$FFRUGLQJWR,62*XLGDQFHSDUW'
+
+/HYHORILQIRUPDWLRQQHHG
+
+LVDIUDPHZRUN
+WR GHILQH WKH TXDOLW\ TXDQWLW\ DQG JUDQXODULW\ RI LQIRUPDWLRQ UHTXLUHPHQWV 7KH OHYHO RI
+LQIRUPDWLRQQHHGHGLVJRYHUQHGE\LWVSXUSRVHWKHUHIRUHUHTXLULQJGLIIHUHQWLQIRUPDWLRQGHOLYHUDEOHV
+IRUDGLIIHUHQWSXUSRVH
+7KHOHYHORILQIRUPDWLRQQHHGLVGHILQHGE\ERWKDSSRLQWLQJSDUW\FOLHQWRULQVRPHH[FHSWLRQDOFDVHV
+E\ WKH OHDG DSSRLQWLQJ SDUW\ FRQWUDFWRU LI WKH DVVHW RZQHUFOLHQW ODFNV WKH FDSDFLW\ 7KH OHYHO RI
+LQIRUPDWLRQQHHGLVDIUDPHZRUNIRUGHILQLQJLQIRUPDWLRQDFURVVWKHIDFHWVSXUSRVHFRQWHQWIRUPDQG
+IRUPDW 8. IUDPHZRUN %6 (1 ,62  7KH OHYHO RI LQIRUPDWLRQ QHHG LV GHILQHG DFURVV WKH
+IROORZLQJIRXUVXEGLYLVLRQVWRSURGXFHWKH$VVHW,QIRUPDWLRQ0RGHO$,0
+ 7KHSXUSRVHZK\LQIRUPDWLRQLVQHHGHG
+ 7KH*HRPHWULFDOLQIRUPDWLRQWRIXOILOOWKHSXUSRVH
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 58
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+3. The Alphanumerical information to fulfill the purpose
+4. The Documentation to fulfill the purpose
+Since the level of information need is purpose-driven, The good practice is to set the contextual
+background on which this information requirement is being developed (purpose).
+4.2.5 Level of Information Need (LOIN) & LOD
+According to ISO 19650 (D) for the level of information need, the information requirements are
+developed using the guidance table below for the operation and maintenance of the building. The level
+of information need is defined initially on the overall domain level (architectural, structural, MEP) rather
+than on the object/element/component level. However, for some components/objects, the level of
+information need is defined individually based on purpose govern by operation and maintenance
+requirements.
+Table 8. LOIN - Architectural model
+Information delivery Milestone Operation and maintenance
+Purpose Visualization/simulation/
+Actors Lead appointed party
+• Architectural Model
+- Geometric information Details Simple, LOD = 300
+Dimensionality 3D
+Location relative
+Appearance realistic
+Parametric behavior explicit geometry
+- Alphanumeric Information Identifications classifications, uni class
+Information contents dimensions, levels, story, space,
+zones
+- Documentations specifications of architectural
+components
+Table 9. LOIN - Structural model
+Information delivery Milestone Operation and maintenance
+Purpose Visualization/simulation/
+Actors Lead appointed party
+59 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+• Structural Model
+- Geometric information Details LOD 300
+Dimensionality 3D
+Location reference
+Appearance realistic
+Parametric behavior explicit geometry
+- Alphanumeric Information Identifications classifications - uni class
+Information contents dimension, shape
+- Documentations specifications of structural
+components
+Table 10. LOIN - MEP model
+Information delivery Milestone Operation and maintenance
+Purpose Visualization/simulation/
+Actors Lead appointed party
+• MEP Model
+- Geometric information Details Detailed - LOD 500
+Dimensionality 3D
+Location Relative
+Appearance Realistic
+Parametric behavior Explicit geometry
+- Alphanumeric Information Identifications Naming,
+numbering,
+classifications,
+reference structure (Cobie/IFC).
+Information contents Tech spec,
+cost,
+manufacturer & supplier
+warranty information,
+design criteria
+installation date
+- Documentations Product specifications,
+maintenance manuals,
+operational manual
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 60
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Photographs,
+2D diagram/system process
+Table 11. Level of Details (LOD)
+Identifications Geometrical
+Information
+Alphanumeric Information
+Element Class
+IFC Class
+LOD
+Classifications
+Name & Model
+no
+Tech specs.
+Vendors info
+Cost information
+Installation date
+Performance
+data Cobie
+Project Ifcproject 200
+Site (property) Ifcsite 200
+Building Ifcbuilding 200
+Building Story
+(Floor)
+Ifcfloor 200
+Space Ifcspace 200
+elements Ifcbuilding
+elements
+350
+Chiller Ifcchiller 350 × × × × × × × ×
+Boiler IfcBoiler 350 × × × × × × × ×
+Condenser Ifccondense
+r
+350 × × × × × × × ×
+Centrifugal
+Pump
+Ifcpump 350 × × × × × × × ×
+Filter Ifcfilter 350 × × × × × × × ×
+Grilles Ifcelements 350 × × × × × × × ×
+Dampers Ifcelements 350 × × × × × × × ×
+Ducts Ifcducts 350 × × × × × × × ×
+Pressure sensor Ifcelements 350 × × × × × × × ×
+Temperature
+sensor
+Ifcelements 350 × × × × × × × ×
+Thermostat Ifcelements 350 × × × × × × × ×
+61 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+4.3 DT Framework Development
+4.3.1 Case Study
+The case study was conducted for the Faculty of Medicine main building located at the Vrazov trg,
+University of Ljubljana, Slovenia. The estate includes 1 main and one annex building (3 stories)
+covering a 250 Sqm area comprising of the lecture room, laboratory space, faculty office, research and
+laboratory space with individual LOTS (parking, flower garden, etc).
+In line with the dissertation objectives, the case study is required to demonstrate the practical application
+of the DT framework in the O&M phase. Based on understanding and knowledge gained about digital
+twin concepts and frameworks through the literature review, It is conclusive that, implementing DT for
+the O&M phase demands skills and knowledge from various fields. Many companies are providing
+digital platforms to create DT solutions for the O&M of building service. Some of the major DT solution
+providers are Autodesk Tandem, Ecodomus/Siemens, Microdesk, and Archibus. Dalux FM is one of the
+proprietary software platforms developed specifically for the O&M phase of building. For this case
+study, the Dalux FM platform is used for the demonstration of the DT solution for maintenance of the
+ventilation system in the building project identified for the case study.
+Figure 39. Scope of a case study (Own works)
+Dalux FM platform is one of the established DT solutions built for O&M of building. The cloud-based
+platform provides a comprehensive DT solution to perform user-defined O&M processes based on the
+types of assets to be maintained. This platform integrates all the necessary DT architecture required to
+perform O&M activity within its system. The DT implementation process for O&M of the ventilation
+system in the building, using the Dalux FM is illustrated in sequence hereunder;
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 62
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 40. Dalux FM modules (Own work)
+1. Location Modules
+Based on the strategic asset management plan, the maintenance requirements are decided for each of the
+asset portfolios. Dalux FM supports managing the asset located in various locations and regions from
+one platform. The foremost process is to identify the geo-location of all the estate, buildings, and Lots
+within the scope of the maintenance plan. The geographical information system (GIS) features are
+integrated with the software platform to allow identifying and marking the exact location of each
+building included in the maintenance project as shown in figure 45. The building system and components
+are positioned relatively to their exact geocoordinates.
+63 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 41. Geolocation of project & building in location modules
+For any DT preparation, the BIM model or object-oriented model is essential. Based on the overall
+purpose of DT implementation, This BIM model of the building, system & components is prepared as
+per the level of information need (LION) and LOD. Prior quality check of all the relevant BIM models
+(IFC format) is performed using configured rulesets to remove any discrepancies and inconsistencies
+using solibri model checker. This includes clash detections within the same models and with other
+disciplines. The critical parameters required in the BIM models are mapped and grouped using solibri
+model checker. The metadata required for each component is also checked and ensures fulfillment. The
+IFC output file from solibri is uploaded to the Dalux platform location modules, and 3D models
+(architectural, structural, and MEP model) are uploaded and linked to the room and space of the building
+footprint on its geolocation. 2D drawings of each floor are also placed corresponding to the floor system
+of the building. Other project-related documents relevant to the maintenance activity of this building are
+also uploaded and linked to individual systems and components. The uploading of the BIM model,
+Autocad drawings, processing, and mapping is done within the Dalux FM.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 64
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 42. MEP model of building
+Figure 43. Solibri ruleset for clash and building envelope check (solibri office)
+Figure 44. Uploading, and processing mapping of floor in Dalux FM
+65 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 45. Federated 3D BIM Models (architectural, structural, and ventilation models)
+Figure 46. Dalux FM Interactive 2D and 3D visualization - (Dalux FM)
+Figure 47. The ventilation system of the building (Dalux FM)
+'RUML77KHRULWLFDODSSOLFDWLRQIUDPHZRUNIRU'7IRURSHUDWLRQDQGPDLQWHQDQFHSKDVH
+0DVWHU7KHVLV/MXEOMDQD8/)**6HFRQGF\FOH0DVWHU6WXG\3URJUDPPH%XLOGLQJ,QIRUPDWLRQ0RGHOOLQJ±%,0$
+ 8VHU6HWWLQJV
+7KHPDLQWHQDQFHSURFHVVLQYROYHVPXOWLSOHVWDNHKROGHUV IRUWKH2	0SURFHVV7KH'DOX[)0XVHU
+VHWWLQJPRGXOHVXSSRUWXVHUGHILQLWLRQVZKLFKLQFOXGHXVHULGHQWLW\HPDLO ,'DVWKHSULPDU\NH\DQG
+VHFRQGDU\NH\VLQFOXGHXVHU UROHV	 UHVSRQVLELOLWLHV RZQHU HVWDWHPDQDJHUPDLQWHQDQFHSHUVRQQHO
+VXSSOLHUFRQWUDFWRUPDQXIDFWXUHUDFFRXQWDQGEXGJHWWKHVFRSHRIUHVSRQVLELOLWLHVDFFRUGLQJWRWKH
+UHJLRQDVVLJQHGLIDSSOLFDEOH7KHXVHUVDUHPDSSHGWRWKHPDLQWHQDQFHWDVNDFWLYLW\DFFRUGLQJWRWKH
+UROHVDQGUHVSRQVLELOLWLHVDVVLJQHGIRUWKHEXLOGLQJDQGUHJLRQ
+)LJXUH8VHUUROHVDQGUHVSRQVLELOLWLHVLQ'DOX[XVHUPRGXOHV'DOX[)0
+ 2	0PRGXOHV
+7KH2	0PRGXOHVGHILQHWKHXVHUPDLQWHQDQFHUHTXLUHPHQWVVXFKDVZRUNRUGHUWHPSODWHVZRUNRUGHU
+W\SHV FKHFNOLVWV SULRULWLHV RI DFWLYLWLHV 45 VFDQQLQJ RI DVVHWV VHUYLFH DJUHHPHQW ZLWK H[WHUQDO
+VWDNHKROGHUVDQGLQYRLFHDQGEXGJHWDOORFDWLRQ7KLV2	0PRGXOHELQGVDOOWKHXVHUGHILQHGHQWLWLHV
+WRSURFHVVWKHPDLQWHQDQFHDFWLYLW\7KHKLVWRULFDOUHFRUGRIHDFKPDLQWHQDQFHWDVNDFWLYLW\LVFROOHFWHG
+DQGDUFKLYHG
+ $VVHW&ODVVLILFDWLRQV	3URSHUWLHV
+7KH YHQWLODWLRQ V\VWHP
+V DVVHWV DUH FODVVLILHG DFFRUGLQJ WRWKH FODVVLILFDWLRQ V\VWHP DGRSWHG $OO WKH
+YHQWLODWLRQFRPSRQHQWVDUHPDSSHGDQGOLQNHGWRWKHV\VWHPVSDFHDQGEXLOGLQJFULWLFDOSURSHUWLHVRI
+HDFKV\VWHPDQGFRPSRQHQWDUHXVHUGHILQHGZLWKLQWKHFODVVLILFDWLRQV\VWHP7KHSURFHVVRIRQWRORJLHV
+PDSSLQJLVLQWHJUDWHGZLWKLQWKH'DOX[)0V\VWHP
+)LJXUH2QWRORJLHVPDSSLQJ
+3URMHFW (VWDWH %XLOGLQJ 6SDFH 6\VWHP FRPSRQHQWV
+67 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+The next phase is to set up the classifications and properties of all the ventilation systems of the building.
+Since the scope of maintenance for this case study is only confined to the ventilation system, the major
+components are mapped to the system, space, and building project. The asset in the Dalux FM are
+installations, building parts, equipment, etc. The asset is used to create user-defined metadata, collecting
+data, warranties, QR support, maintenance history and planning, placement, and analytics. All the assets
+considered for maintenance activity are classified as per the classifications system (Uniclass/uniformat/master-format) and their critical properties are defined (heat, vibrations, speed, flow,
+temperatures, pressure, etc). The classifications and properties of the ventilation system are defined
+accordingly.
+Figure 50. Classification and properties definition for a ventilation system (Dalux FM)
+5. BIM & Documentations
+BIM & documentation modules allow the linking of ventilation system components/products with the
+maintenance process defined for the building. Using the BIM link or point cloud, each asset is classified
+according to the classification system adopted. The assets can be captured from 3D models or the point
+cloud data source. are filtered from 3D models for easy asset tracking and visualization during the
+maintenance task/activity.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 68
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 51. Asset registration via the BIM link- (Dalux FM)
+6. Helpdesk and Work order Modules
+The helpdesk module supports reporting, generating, and assigning tickets and work orders to the
+internal team or external stakeholders. This module binds all the maintenance process requirements
+including people, process, GIS location, and asset models. Various types of maintenance (preventative,
+replacement, mitigating, or service order) are carried out for the ventilation system. The general
+maintenance process flow diagram of this module is illustrated below;
+Figure 52. Flow diagram of the work order process (Own Work)
+The reporters are the person identified and responsible for different maintenance areas or in some cases
+building occupants/dwellers initiating the tickets. They tiggers the first instances of requirements for
+69 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+maintenance work in the form of tickets which are systematically forwarded to the maintenance/estate
+manager. Depending on the nature of the maintenance work requested via the ticket received, the
+maintenance manager reviews the severity of the maintenance task required and decides whether to seek
+additional information from the reporters, reject the maintenance request or create formal work orders.
+The work order is prepared in the work order template designed for the maintenance of that particular
+asset. The work order consists of descriptions, site images, locations, deadline, cost, responsible team
+members or service contractors assigned to responsible individuals from the team, and types of
+maintenance work and priority assigned.
+Figure 53. Workorder & tickets
+The responsible person assigned to perform the maintenance task can seek additional information or
+perform the work order issued to him. The responsible person updates the progress or completes the task
+and status back to the reporter and manager who assigned the job. The time taken for maintenance is
+recorded and informed to the reporter and maintenance manager for invoice and payment bookings. For
+maintenance work outsourced to an external service contractor, the maintenance process remains the
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 70
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+same. All the information is communicated to the team members and external contractors through email
+messaging. The task can be updated anywhere through a mobile device or web login. The budget and
+account module is also integrated with maintenance tasks to perform automatic invoice processing and
+budget update.
+The process of initiating, generating, and assigning recurring maintenance work orders is similar to the
+normal work order process. The maintenance task is assigned to the internal team or external
+suppliers/vendors for the scheduled period as per the service contract agreement. The option to connect
+with the supplier portal is available on this platform. Invoice payment and budget booking for the
+periodic maintenance are auto-generated based on periodic maintenance sheets submitted by team
+members or external vendors.
+7. Notification modules
+This module helps to push the notifications to the internal team members and external vendors such as
+manufacturers, and suppliers associated with the maintenance project through a service contract. The
+ticket, work order, recurring work order, and supplier associated with the operation and maintenance
+task are informed through push email, messages, call and other communication portal established. The
+sample email message pushed by Dalux FM is shown;
+Figure 54.Push message generated in Dalux FM
+8. Userfield
+This module supports the definition of miscellaneous user fields necessary for operation and
+maintenance activity. The user field allows the creation of any additional fields with the desired value
+which can be text, integers, URL links, options for the project, buildings, lots, area, company, contract,
+ticket, work orders, products, rooms, documents, etc.
+71 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Figure 55. User fields (Dalux FM)
+9. Budget
+This module allows keeping track of invoices payments and budgets by linking the work orders and
+recurring work orders completion with the budget plan defined within the system. The budget is
+allocated for each maintenance type or building. The work orders are assigned with a predisposed budget
+and the remaining budget available is indicated in budget modules. After completion of the maintenance
+task, the economy is closed and the actual invoice amount is charged to the budget. The recurring work
+orders book the budget automatically on the scheduled period and update the real-time budget status.
+Finally, the project plans support budgeting for additional work required during the O&M phase for
+renewal or refurbishment projects.
+10. Integrations
+Azure Active Directory (Azure AD), part of Microsoft Entra, is an enterprise identity service that
+provides single sign-on, multifactor authentication, and conditional access to guard against 99.9 percent
+of cybersecurity attacks (www.azure.microsoft.com 12/09/2022). This has the following functions;
+Single sign-on simplifies access to your apps from anywhere; Conditional access and multifactor
+authentication help secure data; A single identity control plane grants full visibility and control of your
+environment; Governance ensures the right people have access to the right resources, and only when
+they need it. Application programming interface (API) supports the interface of data from one platform
+to another application as per requirements for higher DT functions (www.azure.microsoft.com
+12/09/2022)
+11. Dalux FM Dashboard
+This module displays all the critical information on O&M activity. The dashboard displays can be userdefined to push the required information or data from the system using the query and filter system. The
+dashboard provides summarized information on all the O&M activities undertaken.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 72
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Figure 56.Dashboard modules (Dalux FM)
+73 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+4.3.2 Result Discussion
+As the objective of this study is to demonstrate the "Practical application of a framework for digital twin
+during the O&M phase of the building". The state-of-the-art digital twin framework applied for O&M
+of various building assets is examined in the literature review. The frameworks were closely evaluated
+to identify the DT requirements; architecture layers, enabling technologies, and value generated for the
+O&M phase. Additionally, the practical implementation of the DT for the O&M phase was conducted
+using the Dalux FM software to understand the integrations of O&M activity with the DT architecture.
+Another objective was also to identify the gap and limitations of DT capabilities for O&M functions
+using the Dalux FM proprietary software and propose the comprehensive DT framework required for
+the O&M of the Building system. The result of practical application is evaluated against each DT
+architecture layer and the framework for practical application of DT for the O&M phase is proposed.
+DT Architecture Layers
+This DT framework architecture layer comprises five components applied in sequence respectively,
+preparation layer, data acquisition layer, data processing & transmission layer, digital modeling,
+integration & visualization layer, and application layer
+Figure 57. Progressive DT layers
+DT Preparation layer – This is the first layer to fulfill the prerequisite for DT implementation. This
+layer is the most important step to define the scope of successive layers based on the objectives of DT.
+As per Gemini principles, all DT should be driven by purpose in mind, This purpose informs the
+preparation of prerequisites for the DT. The preparation layers review the asset management strategy of
+the organization to select the best strategy required for the digitalization of assets to improve the
+performance gap. Since the value of DT lies in the quality of data, the process of the information
+management framework plays a crucial role in ensuring the flow of data in the O&M phase. The ISO
+19650 (Delivery and operation) standards define the data exchange protocols. For the BIM model to be
+used for the DT platform, the level of information need (LOIN) for each model (architectural, structural,
+MEP) is defined in terms of geometric, alphanumeric, and documentation as required for the DT intent.
+LOD of all the BIM components required for the operation and maintenance are prepared accordingly.
+Preparation
+layer
+Data
+aquisitation
+Layer
+Data
+transmission &
+processing
+layer
+Data
+Modelling and
+Integration
+Layer
+Application
+layer
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 74
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Data acquisition layer – This layer is the foundational step of DT, The sources for relevant data
+required for DT are identified in this domain. This layer prepares the capturing of digital parameters
+from the physical asset identified for the DT. The building operation and maintenance data are captured
+and stored in a heterogenous manner in an existing system such as BMS, CMMS, and AMS. The goal
+of DT implementation will determine which data to acquire from the heterogeneous sources. The BIM
+models for existing buildings are captured by using technologies such as laser scanning, 3D point cloud,
+and photogrammetry. This layer support data capture and upload from relevant building asset using
+advanced techniques such as sensors, QR code, RFID, and imaging processing from the distributed asset
+through IoT-enabled wireless communication, Wifi, and mobile services. Some O&M data are uploaded
+through the user feedback platform. Other sources of public data that include weather and climate data
+are acquired as per requirements.
+Figure 58. Dalux FM O&M Integrations (Own work)
+Data processing & transmission layer – This domain layer transform and transmit the data to the upper
+layers. A significant volume of data is collected from physical assets and the environment during the
+O&M process. Since this data comes in various forms (structured & unstructured), It requires
+transforming the data to a useful and readable format by preprocessing the data or undergoing the cleantransform-store process. The O&M data generated every day from the sensors and O&M activity are in
+massive quantity. Therefore, big data management services are required for transforming, processing,
+and storing those data. This data management cloud service is currently provided by Amazon Web
+75 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Services (AWS), Google Cloud, and Microsoft Azure. For the transmission of data from sensors
+attached to the physical asset of the building, various communication technologies are available such as
+LAN (Local area network), WAN (Wide area network), and 5G. Extract-Transform-Load (ETL)
+technologies support the extraction of data from correct sources (physical assets), transform the data
+into a common and readable format using business rules, and load the data into a warehouse for use in
+the upper layer of DT.
+Data/model integration & visualization layer – This layer is the most complex layer and is the kernel
+of the DT architecture. This layer performs multiple critical functions such as data and model storing,
+analyzing, integrating, processing, and AI-supported decision-making functions, etc (Qiuchen Lu et al.,
+2019). The dynamic data analysis happens in real-time and processes the up-to-date as-is conditions of
+the building asset including work order, current status, and historical information of maintenance
+performed and future prediction of the asset. The integration of AI, ML, data analysis, and simulation
+engines perform intelligent functions such as space & energy optimization, and O&M optimization. This
+layer integrates external data of BIM models at a semantic level using IFC schema which supports the
+representation of components, properties, and attributes and establishes a relationship with other data
+sources using appropriate application program interfaces (API) such as Autodeskforge. For visualization
+of model and data, dashboard displays of the model in a local computer or advanced AR/VR tools are
+used for the detection of assets and faults associated with the asset and resources required for
+maintenance.
+Digital Twin model– Building model Digital Twin model– MEP system
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 76
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Physical Model Sensor – Asset Information
+Figure 59. Physical & Digital Models (Own work)
+Application layer - This is the final layer of the DT framework and provides the user with interactive
+functions. This layer displays the various functions designed for asset management which include
+preventative predictive maintenance tasks, work order management, anomaly detections, and other FM
+functions such as energy and space management.
+Figure 60. .DT framework for O&M of HVAC system
+77 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+4.3.3 Proposed DT Framework for O&M Phase
+Figure 61. Proposed DT framework for O&M phase
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 78
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+5 DT BENEFITS FOR THE O&M PHASE
+Successful implementation of the digital twin has the potential of unlocking economic, social,
+environmental, and business value in the built asset industry (Quaye, G.M, 2021). The general benefits
+of DT application in the O&M phase as per (Autodesk, 2021) are summarised below;
+Some of the real values that can be derived from the implementation of this DT framework for the O&M
+phase are;
+• Reduction in faults and requested repairs through timely maintenance activities
+• Advance detection of anomalies through analysis of sensor data from critical asset
+• Prevention of downtime and catastrophic events using predictive maintenance capabilities
+• Budget control, and reduction of O&M costs from prescriptive maintenance strategies
+• Can perform preventive actions in the absence of qualified maintenance professionals, - a
+systematic process with business intelligence.
+• Effective environmental & asset monitoring to ensure that the working environment is
+comfortable.
+• Reduction in energy consumption cost – optimization control
+• Engaged stakeholders to get valuable feedback on key planning decisions.
+Optimized performance
+Actionable insights, simulations, and a
+connected view of all online and offline
+data enable quick and better decisions to
+optimize performance and efficiency.
+Full view of all data
+Eliminate data silos and unlock value
+across a project’s lifecycle with all
+historical data and real-time data in one
+place.
+Smarter predictions
+With real-time sensor data and predictive
+recommendations through machine
+learning and artificial intelligence,
+maintenance and operations are
+significantly improved.
+Faster results
+Creating digital twins of complex assets,
+factories, and processes exponentially
+improve the value from operations, reduce
+development work, and increase time to
+market.
+79 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+6 LIMITATIONS & FUTURE WORK
+Significant effort was made on literature analysis and evaluation of the state-of-the-art applications of
+the digital twin in asset management for the O&M phase. The relevant papers available in the online
+database are limited and most of the available papers pertain to digital twin applications in the FM-AEC
+industry in general. These research articles are largely at an early stage of development and the practical
+deployment of the framework is not addressed.
+The contribution of this research work to the existing body of knowledge is limited. The DT framework
+in this study is already being proposed by the previous researcher. The expert consultations and
+interviews process could not be conducted to validate the practical usability of the framework. However,
+the framework proposed is tested by implementing the O&M of the building system using the Dalux
+FM DT platform. The result indicates the practical implementation of the DT framework for asset
+management for the O&M phase.
+Other limitations in terms of knowledge area include; Lack of standards for creating digital twins in the
+AEC industry, especially for the O&M phase. However, references are made to digital twin standards
+and guidelines available for the manufacturing industry and many other relevant BIM-related standards
+such as PAS 1192, ISO 19650 – 3 for information management in the O&M phase, and ISO 55000
+(1&2) for asset management.
+Future works proposal includes; an in-depth understanding of asset management and synthesizing the
+strategic AM principles embedded within the DT architecture rather than just patching the superficial
+idea of AM to the framework process. For future scalability, DT-enabled asset management at building
+and infrastructure and ultimately to the city-level need to be explored and developed. The only concern
+of DT applications is the risk of data privacy and security. Therefore adequate measures must be taken
+to manage and mitigate the risk. Gemini principle developed by CDBB, SPHERE provides the best
+practice guidance to create the DT.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 80
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+7 CONCLUSION
+The AEC industry is constantly being challenged by poor asset management practices impacting the
+productivity of the entire built environment. The demand and expectations to improve the entire value
+chain of the built environment has become more urgent than ever before, triggered by global
+interconnected socio-economic-environmental issue. Therefore, AEC practitioners have started
+applying innovative means to improve asset management strategies by leveraging the power of digital
+twin concepts and technologies which have become readily available from industry 4.0. The application
+of digital twin concepts in the AEC sectors has gained significant traction over the last decades due to
+the benefits it promises.
+The AEC industry has already started to implement digital twin concepts and technologies discretely in
+various phases to improve the performance and productivity of the building asset. The implementation
+of digital twins enabled the AEC industry to improve its performance of assets throughout the lifecycle
+which was limited in the BIM-based asset management process. However, digital twins being the newly
+evolved concept from industry 4.0, there exists much confusion among the AEC practitioners regarding
+the correct process of implementing digital twins for the operation and maintenance phase.
+Consequently, due to a lack of clear understanding and guidance documents (standards), the AEC
+industry is still unable to achieve the full potential and value from the DT adoptions in the operation and
+maintenance phase of asset management.
+This research study's goal was to develop the appropriate level of the framework for the practical
+implementation of a digital twin for the operation and maintenance phase. The framework development
+process entails performing a comprehensive literature analysis on the state-of-the-art digital twin
+implementation in the O&M phase, the thematic applications area and the DT model were evaluated to
+understand the system architecture and process utilized. The qualitative and quantitative analysis of the
+selected framework was performed to identify the critical and non-critical components of DT
+architecture. The limitation and knowledge gaps from the existing frameworks are also identified to
+propose value addition wherever possible.
+The proposed framework is verified at the University of Ljubljana, Faculty of Civil & Geodetic
+engineering building operation and maintenance project, using ventilation systems as a topic for the case
+study. Dalux FM is proprietary software used as a digital platform to demonstrate the DT solutions for
+the O&M phase. The results indicate that The Dalux FM demonstration supported the corroborating
+and validation of the framework architecture proposed and check the possibility of practical
+implementation during the O&M phase. The observations made against each layer of the framework
+proposed with the Dalux FM demonstrations also indicated that most of the architecture layers are fully
+integrated to perform the DT functions seamlessly.
+81 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Although Dalux FM has proven the presence of most of the DT architecture within the system to perform
+all the DT functions. Some limitations were also observed in the Dalux FM platform, especially for the
+integration of a higher level of predictive DT solution using machine learning and artificial intelligence
+are missing. The proposed framework from this study includes all the essential DT architecture layers
+to create a digital twin solution for the operation and maintenance phase of any asset. The methodology
+for developing information requirements, operation, and maintenance process flow, and BIM models
+(Revit/IFC) are also presented as part of the framework proposal.
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 82
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+8 BIBLIOGRAPHY
+Abualdenien, J., Borrmann, A. 2022. Levels of detail, development, definition, and information need: a
+critical literature review. J. Inf. Technol. Constr. 27, 363–392.
+https://doi.org/10.36680/j.itcon.2022.018
+Adriaanse, Arjen, Borsboom ,Wouter, Roef, Rob. 2021. TOWARDS NETWORKS OF PREDICTIVE
+TWINS IN THE BUILT ENVIRONMENT.
+Autodesk, 2021. How to Create Digital Twins with Autodesk’s BIM Solutions and Unity | Autodesk
+University [WWW Document]. URL https://www.autodesk.com/autodeskuniversity/class/How-Create-Digital-Twins-Autodesks-BIM-Solutions-and-Unity-2021
+(accessed 9.5.2022).
+Barricelli, B.R., Casiraghi, E., Fogli, D. 2019. A Survey on Digital Twin: Definitions, Characteristics,
+Applications, and Design Implications. IEEE Access 7, 167653–167671.
+https://doi.org/10.1109/ACCESS.2019.2953499
+Bhatti, G., Mohan, H., Raja Singh, R. 2021. Towards the future of smart electric vehicles: Digital twin
+technology. Renew. Sustain. Energy Rev. 141, 110801.
+https://doi.org/10.1016/j.rser.2021.110801
+Boje, C., Guerriero, A., Kubicki, S., Rezgui, Y. 2020. Towards a semantic Construction Digital Twin:
+Directions for future research. Autom. Constr. 114, 103179.
+https://doi.org/10.1016/j.autcon.2020.103179
+buildingSMART, 2022. Home [WWW Document]. Build. Int. URL https://www.buildingsmart.org/
+(accessed 9.5.2022).
+Coupry, C., Noblecourt, S., Richard, P., Baudry, D., Bigaud, D. 2021. BIM-Based Digital Twin and XR
+Devices to Improve Maintenance Procedures in Smart Buildings: A Literature Review. Appl.
+Sci. 11, 6810. https://doi.org/10.3390/app11156810
+Deloitte, 2020. Industry 4.0 and the digital twin.
+Digital twin, 2022. . Wikipedia.
+Feng, Haibo, Chen, Qian, Garcia De Soto, Borja. 2021. Application of digital twin technologies in
+construction: an overview of opportunities and challenges.
+Fuller, A., Fan, Z., Day, C., Barlow, C. 2020. Digital Twin: Enabling Technologies, Challenges and
+Open Research. IEEE Access 8, 108952–108971.
+https://doi.org/10.1109/ACCESS.2020.2998358
+Ghobakhloo, M. 2020. Industry 4.0, digitization, and opportunities for sustainability. J. Clean. Prod.
+252, 119869. https://doi.org/10.1016/j.jclepro.2019.119869
+Grieves, M., 2016. Origins of the Digital Twin Concept. https://doi.org/10.13140/RG.2.2.26367.61609
+Grieves, M. 2006. Product lifecycle management: driving the next generation of lean thinking. McGrawHill, New York.
+83 Dorji, T. 2022. Theoretical application.... framework for DT for operation and maintenance phase
+ Master Thesis Ljubljana, UL FGG, Second cycle Master study Programme Building Information Modelling – BIM A+.
+Hallaji, S.M., Fang, Y., Winfrey, B.K. 2022. Predictive maintenance of pumps in civil infrastructure:
+State-of-the-art, challenges and future directions. Autom. Constr. 134, 104049.
+https://doi.org/10.1016/j.autcon.2021.104049
+Halmetoja, E., Lepkova, N. 2022. Utilising Building Information Models in Facility Maintenance and
+Operations. Tek. Dergi. https://doi.org/10.18400/tekderg.748397
+Heaton, J., Parlikad, A.K. 2020. Asset Information Model to support the adoption of a Digital Twin:
+West Cambridge case study. IFAC-Pap. 53, 366–371.
+https://doi.org/10.1016/j.ifacol.2020.11.059
+Hu, W., Zhang, T., Deng, X., Liu, Z., Tan, J. 2021. Digital twin: a state-of-the-art review of its enabling
+technologies, applications and challenges. J. Intell. Manuf. Spec. Equip. 2, 1–34.
+https://doi.org/10.1108/JIMSE-12-2020-010
+Kumar, V., Teo, A.L.E. 2021. Development of a rule-based system to enhance the data consistency and
+usability of COBie datasheets☆. J. Comput. Des. Eng. 8, 343–361.
+https://doi.org/10.1093/jcde/qwaa083
+Lu, Q., Xie, X., Heaton, J., Parlikad, A.K., Schooling, J. 2020a. From BIM Towards Digital Twin:
+Strategy and Future Development for Smart Asset Management, in: Borangiu, T., Trentesaux,
+D., Leitão, P., Giret Boggino, A., Botti, V. (Eds.), Service Oriented, Holonic and Multi-Agent
+Manufacturing Systems for Industry of the Future, Studies in Computational Intelligence.
+Springer International Publishing, Cham, pp. 392–404. https://doi.org/10.1007/978-3-030-
+27477-1_30
+Lu, Q., Xie, X., Parlikad, A.K., Schooling, J.M. 2020b. Digital twin-enabled anomaly detection for built
+asset monitoring in operation and maintenance. Autom. Constr. 118, 103277.
+https://doi.org/10.1016/j.autcon.2020.103277
+Lu, Q., Xie, X., Parlikad, A.K., Schooling, J.M. Konstantinou, E., 2021. Moving from building
+information models to digital twins for operation and maintenance. Proc. Inst. Civ. Eng. - Smart
+Infrastruct. Constr. 174, 46–56. https://doi.org/10.1680/jsmic.19.00011
+Maskuriy, R., Selamat, A., Ali, K.N., Maresova, P., Krejcar, O. 2019. Industry 4.0 for the Construction
+Industry—How Ready Is the Industry? Appl. Sci. 9, 2819. https://doi.org/10.3390/app9142819
+Opoku, D.-G.J., Perera, S., Osei-Kyei, R., Rashidi, M., Famakinwa, T., Bamdad, K. 2022. Drivers for
+Digital Twin Adoption in the Construction Industry: A Systematic Literature Review. Buildings
+12, 113. https://doi.org/10.3390/buildings12020113
+Papic, D., Cerovsek, T. 2019. Digital built environment maturity model: Digital twins advancing smart
+infrastructure asset management. Presented at the 2019 European Conference on Computing in
+Construction, pp. 387–394. https://doi.org/10.35490/EC3.2019.234
+Peng, Y., Zhang, M., Yu, F., Xu, J., Gao, S. 2020. Digital Twin Hospital Buildings: An Exemplary Case
+Study through Continuous Lifecycle Integration. Adv. Civ. Eng. 2020, e8846667.
+https://doi.org/10.1155/2020/8846667
+Dorji, T. 2022. Theoritical application..... framework for DT for operation and maintenance phase 84
+Master Thesis. Ljubljana, UL FGG, Second cycle Master Study Programme Building Information Modelling – BIM A+.
+Pronost, G., Mayer, F., Marche, B., Camargo, M., Dupont, L. 2021. Towards a Framework for the
+Classification of Digital Twins and their Applications.
+https://doi.org/10.1109/ICE/ITMC52061.2021.9570114
+Qiuchen Lu, V., Parlikad, A.K., Woodall, P., Ranasinghe, G.D., Heaton, J. 2019. Developing a Dynamic
+Digital Twin at a Building Level: using Cambridge Campus as Case Study, in: International
+Conference on Smart Infrastructure and Construction 2019 (ICSIC). Presented at the
+International Conference on Smart Infrastructure and Construction 2019 (ICSIC), ICE
+Publishing, Cambridge, UK, pp. 67–75. https://doi.org/10.1680/icsic.64669.067
+Quaye, G.M. 2021. Digital Twins implementation in Operations and Maintenance phase of a building
+lifecycle.
+Sacks, R., Brilakis, I., Pikas, E., Xie, H.S., Girolami, M. 2020. Construction with digital twin
+information systems. Data-Centric Eng. 1, e14. https://doi.org/10.1017/dce.2020.16
+Singh, M., Fuenmayor, E., Hinchy, E.P., Qiao, Y., Murray, N., Devine, D.2021. Digital Twin: Origin to
+Future. Appl. Syst. Innov. 4, 36. https://doi.org/10.3390/asi4020036
+SPHERE, CDBB, 2020. DIGITAL TWIN DEFINITIONS FOR BUILDINGS.
+Tao, F., Zhang, H., Liu, A., Nee, A.Y.C. 2019. Digital Twin in Industry: State-of-the-Art. IEEE Trans.
+Ind. Inform. 15, 2405–2415. https://doi.org/10.1109/TII.2018.2873186
+Vaidya, S., Ambad, P., Bhosle, S. 2018. Industry 4.0 – A Glimpse. Procedia Manuf. 20, 233–238.
+https://doi.org/10.1016/j.promfg.2018.02.034
+van der Valk, H., Haße, H., Möller, F., Arbter, M., Henning, J.-L., Otto, B. 2020. A Taxonomy of Digital
+Twins.
+Xie, X., Lu, Q., Parlikad, A.K., Schooling, J.M. 2020. Digital Twin Enabled Asset Anomaly Detection
+for Building Facility Management. IFAC-Pap. 53, 380–385.
+https://doi.org/10.1016/j.ifacol.2020.11.061
+Zhao, J., Feng, H., Chen, Q., Garcia de Soto, B. 2022. Developing a conceptual framework for the
+application of digital twin technologies to revamp building operation and maintenance
+processes. J. Build. Eng. 49, 104028. https://doi.org/10.1016/j.jobe.2022.104028
